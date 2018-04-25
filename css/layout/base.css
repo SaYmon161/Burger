@@ -26,3 +26,8 @@ html, body {
     display: block;
     clear: both;
 }
+
+.container {
+    margin: 0 auto;
+    width: 1100px;
+}

@@ -31,5 +31,14 @@
 }
 
 .order__btn {
-
+    float: left;
+    width: 97px;
+    height: 35px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #e45028;
+    text-align: center;
+    line-height: 35px;
 }

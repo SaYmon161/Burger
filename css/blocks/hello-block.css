@@ -7,13 +7,21 @@
 }
 
 .hello-block__pic-wrap {
-    background: url(../../img/hello_section/drops.svg) 0 0 no-repeat;
-    display: inline-block;
+    float: left;
+    position: relative;
 }
 
+.hello-block__drops {
+    position: absolute;
+    top: 12%;
+    left: -7%;
+}
+
+
+
 .hello-block__slogan {
-    display: inline-block;
-    vertical-align: top;
+    float: left;
+    width: 40%;
 }
 
 .slogan__text1 {
