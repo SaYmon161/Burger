@@ -1,0 +1,33 @@
+.hello-block {
+    background: url(../../img/hello_section/video-bg.jpg) 0 0 no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+}
+
+.hello-block__pic-wrap {
+    background: url(../../img/hello_section/drops.svg) 0 0 no-repeat;
+    display: inline-block;
+}
+
+.hello-block__slogan {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.slogan__text1 {
+    font-size: 72px;
+    font-family: 'gagalin';
+    color: #f9b43b;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.slogan__text2 {
+    font-size: 65px;
+    font-family: 'lifehack';
+    color: #fff;
+    font-style: italic;
+
+}

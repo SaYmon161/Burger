@@ -1,0 +1,35 @@
+.header__logo {
+    float: left;
+}
+
+.header__navigation {
+    float: left;
+}
+
+.nav__item {
+    display: inline-block;
+}
+
+.nav__link {
+    font-size: 13px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.nav__item:after {
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+    vertical-align: middle;
+}
+
+.nav__item:last-child:after {
+    display: none;
+}
+
+.order__btn {
+
+}
