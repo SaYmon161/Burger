@@ -30,4 +30,5 @@ html, body {
 .container {
     margin: 0 auto;
     width: 1100px;
+    padding-left: 73px;
 }
