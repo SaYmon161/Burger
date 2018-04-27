@@ -8,7 +8,7 @@
 
 .hello-block__content {
     margin: 0 auto;
-
+    margin-bottom: 80px;    
 }
 
 .hello-block__pic-wrap {
@@ -49,4 +49,8 @@
     font-family: "lifehack";
     color: #fff;
     line-height: 61px;
+}
+
+.hello-block__forward {
+    text-align: center;
 }
