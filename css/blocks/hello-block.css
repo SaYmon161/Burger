@@ -15,12 +15,12 @@
     float: left;
     position: relative;
     width: 47%;
-    padding-left: 49px;
+    padding-left: 24px;
 }
 
 .hello-block__picture {
-    width: 417px;
-    height: 424px;
+    width: 449px;
+    height: 414px;
 }
 
 .hello-block__slogan {
