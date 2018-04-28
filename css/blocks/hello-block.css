@@ -23,12 +23,6 @@
     height: 424px;
 }
 
-.hello-block__drops {
-    position: absolute;
-    top: 12%;
-    left: 5%;
-}
-
 .hello-block__slogan {
     float: left;
     width: 38%;
