@@ -29,7 +29,7 @@
     padding-top: 127px;
 }
 
-.slogan__text1 {
+.slogan__title {
     font-size: 72px;
     font-family: "gagalin";
     color: #f9b43b;
@@ -38,7 +38,7 @@
     margin-bottom: 20px;
 }
 
-.slogan__text2 {
+.slogan__text {
     font-size: 65px;
     font-family: "lifehack";
     color: #fff;
