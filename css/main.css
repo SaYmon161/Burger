@@ -295,7 +295,8 @@ a {
 .pagination {
   position: fixed;
   top: 15%;
-  right: 5%; }
+  right: 5%;
+  z-index: 15; }
 
 .pagination__item {
   width: 0.375rem;
