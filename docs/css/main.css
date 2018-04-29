@@ -145,7 +145,7 @@ a {
     background-color: #912e13; }
 
 .section--hello-block {
-  background: url(../../img/hello_section/video-bg.jpg) 0 0 no-repeat;
+  background: url(../img/hello_section/video-bg.jpg) 0 0 no-repeat;
   background-size: cover; }
 
 .hello-block__content {
