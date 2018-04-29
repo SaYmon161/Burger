@@ -6,14 +6,15 @@
 }
 
 .pagination__item {
-    @include circle(rem(6px), #fff);
+    @include circle(rem(8px), #fff);
     position: relative;
     margin-bottom: rem(15px);
+    cursor: pointer;
     &:hover:after {
         content: '';
         position: absolute;
-        width: rem(15px);
-        height: rem(15px);
+        width: rem(20px);
+        height: rem(20px);
         border-radius: 50%;
         border: 1px solid #fff;
         top: 50%;
