@@ -1,0 +1,28 @@
+//config
+
+@import "config/mixins.scss";
+
+@import "config/variables.scss";
+
+// layout
+
+@import "layout/fonts.scss";
+
+@import "layout/base.scss";
+
+@import "layout/adjustments.scss";
+
+
+//blocks
+
+@import "blocks/header.scss";
+
+@import "blocks/hello.scss";
+
+@import "blocks/best.scss";
+
+@import "blocks/feedback.scss";
+
+@import "blocks/footer.scss";
+
+@import "blocks/aside-pagination";
