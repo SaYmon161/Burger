@@ -24,10 +24,29 @@
 
 .v-accordeon__item {
 	width: 366px;
+	margin-bottom: 22px;
 }
 
 .v-accordeon__content {
 	padding-left: 20px;
+	overflow: hidden;
+	height: 0;
+}
+
+.v-accordeon__item--active {
+	.v-accordeon__name{
+		color: $yellow;
+		&:before {
+			content: '';
+			display: inline-block;
+			@include arrow (6px, $yellow, 'up');
+			margin-right: 5px;
+		}
+	}
+	.v-accordeon__content {
+		height: initial;
+	}
+
 }
 
 .v-accordeon__name {
@@ -35,6 +54,7 @@
 	font-family: 'gagalin';
 	font-size: 14px;
 	color: #fff;
+	margin-bottom: 10px;
 	&:before {
 		content: '';
 		display: inline-block;
@@ -48,6 +68,7 @@
 	overflow: hidden;
 	@include circle (100px, #fff);
 	position: relative;
+	margin-right: 11px;
 }
 
 .content__img {
@@ -68,10 +89,12 @@
 	font-size: 14px;
 	font-weight: 700;
 	color: #fff;
+	margin-bottom: 16px;
 }
 
 .content__text {
 	font-size: 14px;
 	font-weight: 300;
 	color: #fff;
+	line-height: 1.6;
 }
