@@ -1,66 +1,66 @@
 .header {
-    @include clearfix;
-    padding-top: 10px;
+	@include clearfix;
+	padding-top: 10px;
 }
 
 .header__logo {
-    float: left;
-    width: 31%;
-    margin-right: 6px;
+	float: left;
+	width: 31%;
+	margin-right: 6px;
 }
 
 .header__navigation {
-    float: left;
-    padding-top: 30px;
-    margin-right: 3px;
+	float: left;
+	padding-top: 30px;
+	margin-right: 3px;
 }
 
 .nav__list {
-    font-size: 0;
-    margin-right: 20px;
+	font-size: 0;
+	margin-right: 20px;
 }
 
 .nav__item {
-    display: inline-block;
-    &:after {
-        content: '';
-        @include circle (4px, #fff);
-        display: inline-block;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    &:last-child:after
-    {
-        display: none;
-    }
+	display: inline-block;
+	&:after {
+		content: '';
+		@include circle (4px, #fff);
+		display: inline-block;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	&:last-child:after
+	{
+			display: none;
+	}
 }
 
 
 .nav__link {
-    font-family: 'ubuntu';
-    font-weight: 500;
-    font-size: 13px;
-    color: #fff;
-    letter-spacing: 0.06px;
-    text-transform: uppercase;
+	font-family: 'ubuntu';
+	font-weight: 500;
+	font-size: 13px;
+	color: #fff;
+	letter-spacing: 0.06px;
+	text-transform: uppercase;
 }
 
 .header__order {
-    padding-top: 20px;
+	padding-top: 20px;
 }
 
 .order__btn {
-    float: left;
-    width: 97px;
-    height: 35px;
-    border-radius: 6px;
-    font-size: 13px;
-    color: #fff;
-    text-transform: uppercase;
-    background-color: $orange;
-    text-align: center;
-    line-height: 35px;
-    &:hover {
-        background-color: darken($color: $orange, $amount: 20%);
-    }
+	float: left;
+	width: 97px;
+	height: 35px;
+	border-radius: 6px;
+	font-size: 13px;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: $orange;
+	text-align: center;
+	line-height: 35px;
+	&:hover {
+		background-color: darken($color: $orange, $amount: 20%);
+	}
 }
