@@ -57,11 +57,19 @@
     writing-mode: vertical-lr;
     transform: rotate(-180deg);
     width: 80px;
+    line-height: 100%;
     font-size: 40px;
-    text-align: center;
+    height: 100%;
     align-self: flex-end;
     padding-top: 43px;
     padding-left: 15px;
+    background-size: cover;
+}
+
+@each $title-bg in (meat, vegetarian, diet) {
+    .h-accordeon__title--#{$title-bg} {
+        background: url(../img/menu_section/accord_#{$title-bg}.jpg) center center no-repeat;
+    }
 }
 
 

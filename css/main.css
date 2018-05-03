@@ -391,12 +391,23 @@ a {
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
   width: 80px;
+  line-height: 100%;
   font-size: 40px;
-  text-align: center;
+  height: 100%;
   -ms-flex-item-align: end;
   align-self: flex-end;
   padding-top: 43px;
-  padding-left: 15px; }
+  padding-left: 15px;
+  background-size: cover; }
+
+.h-accordeon__title--meat {
+  background: url(../img/menu_section/accord_meat.jpg) center center no-repeat; }
+
+.h-accordeon__title--vegetarian {
+  background: url(../img/menu_section/accord_vegetarian.jpg) center center no-repeat; }
+
+.h-accordeon__title--diet {
+  background: url(../img/menu_section/accord_diet.jpg) center center no-repeat; }
 
 .feedback__list {
   width: 100%;
