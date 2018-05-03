@@ -398,16 +398,16 @@ a {
   align-self: flex-end;
   padding-top: 43px;
   padding-left: 15px;
-  background-size: cover; }
+  background-size: auto; }
 
 .h-accordeon__title--meat {
-  background: url(../img/menu_section/accord_meat.jpg) center center no-repeat; }
+  background: url(../img/menu_section/accord_meat.jpg) 0 0 no-repeat; }
 
 .h-accordeon__title--vegetarian {
-  background: url(../img/menu_section/accord_vegetarian.jpg) center center no-repeat; }
+  background: url(../img/menu_section/accord_vegetarian.jpg) 0 0 no-repeat; }
 
 .h-accordeon__title--diet {
-  background: url(../img/menu_section/accord_diet.jpg) center center no-repeat; }
+  background: url(../img/menu_section/accord_diet.jpg) 0 0 no-repeat; }
 
 .feedback__list {
   width: 100%;
