@@ -6,10 +6,20 @@
 }
 
 .pagination__item {
-    @include circle(rem(8px), #fff);
-    position: relative;
     margin-bottom: rem(15px);
-    cursor: pointer;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.pagination__link {
+    display: block;
+    position: relative;
+    &:before {
+        display: block;
+        content: '';
+        @include circle(rem(8px), #fff);
+    }
     &:hover:after {
         content: '';
         position: absolute;
@@ -21,8 +31,5 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
-    }
-    &:last-child {
-        margin-bottom: 0;
     }
 }
