@@ -347,5 +347,3 @@ a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 10; }
-  .pagination__link:last-child {
-    margin-bottom: 0; }
