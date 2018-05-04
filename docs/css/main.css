@@ -194,32 +194,32 @@ a {
   margin-bottom: 27px;
   padding-right: 72px; }
 
-.best__content ul {
+.best__list {
   text-align: center;
   padding-right: 73px; }
 
-.best__content li {
+.best__item {
   width: 32%;
   display: inline-block;
   vertical-align: top;
   margin-right: 10px; }
-  .best__content li:last-child {
+  .best__item:last-child {
     margin-right: 0; }
 
-.best__content li > div {
+.best__item > div {
   width: 100px;
   height: 100px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 11px; }
 
-.best__content h3 {
+.best__item h3 {
   font-family: "lifehack";
   font-size: 25px;
   margin-bottom: 10px;
   line-height: 1.27; }
 
-.best__content p {
+.best__item p {
   font-size: 14px;
   line-height: 1.7; }
 
@@ -319,18 +319,18 @@ a {
   right: 5%;
   z-index: 15; }
 
-.pagination__item {
+.pagination__link {
   margin-bottom: 0.9375rem;
-  cursor: pointer;
+  display: block;
   position: relative; }
-  .pagination__item:before {
+  .pagination__link:before {
     display: block;
     content: '';
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 0.25rem;
     background-color: #fff; }
-  .pagination__item:hover:after {
+  .pagination__link:hover:after {
     content: '';
     position: absolute;
     width: 1.25rem;
@@ -343,5 +343,5 @@ a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 10; }
-  .pagination__item:last-child {
+  .pagination__link:last-child {
     margin-bottom: 0; }
