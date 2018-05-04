@@ -5,9 +5,9 @@
     z-index: 15;
 }
 
-.pagination__item {
+.pagination__link {
     margin-bottom: rem(15px);
-    cursor: pointer;
+    display: block;
     position: relative;
     &:before {
         display: block;
