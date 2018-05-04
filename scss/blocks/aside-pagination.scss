@@ -5,8 +5,14 @@
     z-index: 15;
 }
 
-.pagination__link {
+.pagination__item {
     margin-bottom: rem(15px);
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.pagination__link {
     display: block;
     position: relative;
     &:before {
