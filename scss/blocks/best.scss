@@ -10,12 +10,12 @@
     padding-right: 72px;
 }
 
-.best__list {
+.best__content ul {
     text-align: center;
     padding-right: 73px;
 }
 
-.best__item {
+.best__content li {
     width: 32%;
     display: inline-block;
     vertical-align: top;
@@ -25,7 +25,7 @@
     }
 }
 
-.best__pic-wrap {
+.best__content li > div {
     width: 100px;
     height: 100px;
     text-align: center;
@@ -33,14 +33,14 @@
     margin-bottom: 11px;
 }
 
-.best__subtitle {
+.best__content h3 {
     font-family: "lifehack";
     font-size: 25px;
     margin-bottom: 10px;
     line-height: 1.27;
 }
 
-.best__text {
+.best__content p {
     font-size: 14px;
     line-height: 1.7;
 }
