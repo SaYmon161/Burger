@@ -66,7 +66,7 @@ a {
 
 .wrapper {
   width: 100%;
-  height: 100%; }
+  overflow: hidden; }
 
 .container {
   margin: 0 auto;
@@ -127,7 +127,7 @@ a {
   letter-spacing: 0.06px;
   text-transform: uppercase; }
 
-.header__order {
+.order {
   padding-top: 20px; }
 
 .order__btn {
@@ -144,7 +144,7 @@ a {
   .order__btn:hover {
     background-color: #912e13; }
 
-.section--hello-block {
+.hello-block {
   background: url(../img/hello_section/video-bg.jpg) 0 0 no-repeat;
   background-size: cover; }
 
@@ -181,10 +181,10 @@ a {
   color: #fff;
   line-height: 61px; }
 
-.hello-block__forward {
+.forward-arrow {
   text-align: center; }
 
-.section--best {
+.best {
   background: url(../img/best_section/bg.jpg) 0 0 no-repeat;
   background-size: cover;
   padding-top: 120px; }
@@ -194,32 +194,32 @@ a {
   margin-bottom: 27px;
   padding-right: 72px; }
 
-.best__list {
+.best__content ul {
   text-align: center;
   padding-right: 73px; }
 
-.best__item {
+.best__content li {
   width: 32%;
   display: inline-block;
   vertical-align: top;
   margin-right: 10px; }
-  .best__item:last-child {
+  .best__content li:last-child {
     margin-right: 0; }
 
-.best__pic-wrap {
+.best__content li > div {
   width: 100px;
   height: 100px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 11px; }
 
-.best__subtitle {
+.best__content h3 {
   font-family: "lifehack";
   font-size: 25px;
   margin-bottom: 10px;
   line-height: 1.27; }
 
-.best__text {
+.best__content p {
   font-size: 14px;
   line-height: 1.7; }
 
@@ -230,7 +230,7 @@ a {
 .feedback__item {
   display: inline-block;
   overflow: hidden;
-  width: 24.7vw;
+  width: 25%;
   height: 50vh;
   position: relative; }
   .feedback__item:after {
@@ -320,13 +320,16 @@ a {
   z-index: 15; }
 
 .pagination__item {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 0.25rem;
-  background-color: #fff;
-  position: relative;
   margin-bottom: 0.9375rem;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative; }
+  .pagination__item:before {
+    display: block;
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #fff; }
   .pagination__item:hover:after {
     content: '';
     position: absolute;
