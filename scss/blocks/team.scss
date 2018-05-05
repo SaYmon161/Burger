@@ -9,27 +9,40 @@
 	height: 100%;
 	position: absolute;
 	top: 0;
-	left: 50%;
+	right: 0;
 	background-color: rgba(47, 50, 52, .93);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .team__content {
-	padding-top: 90px;
-	padding-left: 100px;
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	// padding-top: 90px;
+	padding-left: rem(10px);
 }
 
 .title--team {
 	color: $yellow;
-	margin-bottom: 25px;
+	margin-bottom: rem(25px);
 }
 
+.v-accordeon {
+	display: flex;
+}
+
+
 .v-accordeon__item {
-	width: 366px;
-	margin-bottom: 22px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: rem(22px);
 }
 
 .v-accordeon__content {
-	padding-left: 20px;
+	display: flex;
 	overflow: hidden;
+	justify-content: space-around;
 	height: 0;
 }
 
@@ -40,35 +53,37 @@
 			content: '';
 			display: inline-block;
 			@include arrow (6px, $yellow, 'up');
-			margin-right: 5px;
+			margin-right: rem(5px);
 		}
 	}
 	.v-accordeon__content {
-		height: initial;
+		min-height: rem(125px);
+		height: auto;
 	}
 
 }
 
 .v-accordeon__name {
-	text-align: left;
+	display: flex;
+	align-items: center;
 	font-family: 'gagalin';
-	font-size: 14px;
+	font-size: rem(14px);
 	color: #fff;
-	margin-bottom: 10px;
+	margin-bottom: rem(10px);
 	&:before {
 		content: '';
-		display: inline-block;
+		display: block;
 		@include arrow (6px, white, 'down');
-		margin-right: 5px;
+		margin-right: rem(5px);
 	}
 }
 
 .pic-wrap {
-	display: inline-block;
+	display: flex;
 	overflow: hidden;
 	@include circle (100px, #fff);
 	position: relative;
-	margin-right: 11px;
+	margin-right: rem(11px);
 }
 
 .content__img {
@@ -79,21 +94,19 @@
 }
 
 .content__description {
-	display: inline-block;
 	text-align: left;
 	width: 60%;
-	vertical-align: top;
 }
 
 .content__title {
-	font-size: 14px;
+	font-size: rem(14px);
 	font-weight: 700;
 	color: #fff;
-	margin-bottom: 16px;
+	margin-bottom: rem(16px);
 }
 
 .content__text {
-	font-size: 14px;
+	font-size: rem(14px);
 	font-weight: 300;
 	color: #fff;
 	line-height: 1.6;
