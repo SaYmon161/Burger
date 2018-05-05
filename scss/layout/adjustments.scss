@@ -1,12 +1,20 @@
 .wrapper {
     width: 100%;
+    min-width: 960px;
+    min-height: 100%;
+    position: relative;
     overflow: hidden;
 }
 
 .container {
     margin: 0 auto;
-    width: 1100px;
-    padding-left: 73px;
+    max-width: 940px;
+    width: 95%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section {

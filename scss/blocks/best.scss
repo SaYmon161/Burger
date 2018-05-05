@@ -1,46 +1,42 @@
 .best {
     background: url(../img/best_section/bg.jpg) 0 0 no-repeat;
     background-size: cover;
-    padding-top: 120px;
+
 }
 
 .title--best {
     text-align: center;
-    margin-bottom: 27px;
-    padding-right: 72px;
+    margin-bottom: rem(30px);
 }
 
 .best__list {
-    text-align: center;
-    padding-right: 73px;
+    display: flex; 
+    justify-content: space-between;
 }
 
 .best__item {
-    width: 32%;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 10px;
-    &:last-child {
-        margin-right: 0;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: calc(100%/3);
 }
 
 .best__item > div {
-    width: 100px;
-    height: 100px;
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 11px;
+    height: rem(120px);
 }
 
 .best__item h3 {
     font-family: "lifehack";
-    font-size: 25px;
-    margin-bottom: 10px;
+    font-size: rem(25px);
     line-height: 1.27;
+    margin-bottom: rem(13px);
 }
 
 .best__item p {
-    font-size: 14px;
+    margin: 0;
+    font-size: rem(14px);
+    font-weight: 300;
     line-height: 1.7;
 }

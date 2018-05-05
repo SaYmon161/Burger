@@ -1,44 +1,55 @@
 .hello-block {
     background: url(../img/hello_section/video-bg.jpg) 0 0 no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.hello-block__inner-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hello-block__container {
+    display: flex;
+    flex: 0.8;
 }
 
 .hello-block__content {
-    @include clearfix;
-    margin: 0 auto;
-    margin-bottom: 80px;    
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    align-self: center;
 }
 
 .hello-block__pic-wrap {
     float: left;
     position: relative;
-    width: 47%;
-    padding-left: 24px;
+    width: 50%;
 }
 
 .hello-block__picture {
-    width: 449px;
-    height: 414px;
+    width: 100%;
 }
 
 .hello-block__slogan {
-    float: left;
-    width: 38%;
-    padding-top: 117px;
+    width: 50%;
+    padding-top: rem(30px);
 }
 
 .title--slogan {
     color: $yellow;
-    margin-bottom: 10px;
 }
 
 .slogan__text {
-    font-size: 65px;
+    font-size: rem(65px);
     font-family: "lifehack";
     color: #fff;
-    line-height: 61px;
+    line-height: 0.98;
 }
 
 .forward-arrow {
-    text-align: center;
+    position: absolute;
+    bottom: 9%;
+    left: 49.5%;
 }
