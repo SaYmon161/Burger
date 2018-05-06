@@ -14,13 +14,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@include tablets {
+		width: 100%;
+	}
 }
 .team__content {
-	display: flex;
-	flex-direction: column;
 	width: 70%;
-	// padding-top: 90px;
 	padding-left: rem(10px);
+
+	@include tablets {
+		text-align: center;
+		align-items: center;
+	}
 }
 
 .title--team {
@@ -28,15 +34,13 @@
 	margin-bottom: rem(25px);
 }
 
-.v-accordeon {
-	display: flex;
-}
-
 
 .v-accordeon__item {
-	display: flex;
-	flex-direction: column;
 	margin-bottom: rem(22px);
+	
+	@include tablets {
+		margin-bottom: 0;		
+	}
 }
 
 .v-accordeon__content {
@@ -44,6 +48,12 @@
 	overflow: hidden;
 	justify-content: space-around;
 	height: 0;
+
+	@include tablets {
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: rem(20px);
+	}
 }
 
 .v-accordeon__item--active {
@@ -76,14 +86,23 @@
 		@include arrow (6px, white, 'down');
 		margin-right: rem(5px);
 	}
+
+	@include tablets {
+		justify-content: center;
+		font-size: rem(25px);	
+	}
 }
 
 .pic-wrap {
-	display: flex;
 	overflow: hidden;
 	@include circle (100px, #fff);
 	position: relative;
 	margin-right: rem(11px);
+
+	@include tablets {
+		margin-bottom: rem(20px);
+		margin-right: 0;	
+	}
 }
 
 .content__img {
@@ -94,8 +113,11 @@
 }
 
 .content__description {
-	text-align: left;
 	width: 60%;
+
+	@include tablets {
+		text-align: center;	
+	}
 }
 
 .content__title {

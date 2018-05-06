@@ -38,3 +38,15 @@
     border-right-width: 0;
   }
 }
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  } 
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  } 
+}

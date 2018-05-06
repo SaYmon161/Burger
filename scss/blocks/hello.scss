@@ -13,32 +13,54 @@
 .hello-block__container {
     display: flex;
     flex: 0.8;
+
+    @include tablets {
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .hello-block__content {
     display: flex;
     align-items: center;
     padding-left: 3%;
-    align-self: center;
+
+    @include tablets {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+    }
 }
 
 .hello-block__pic-wrap {
-    float: left;
-    position: relative;
     width: 50%;
+
+    @include tablets {
+        width: 100%;;
+    }
 }
 
 .hello-block__picture {
     width: 100%;
+    max-width: 480px;
+    min-width: 360px;
 }
 
 .hello-block__slogan {
     width: 50%;
     padding-top: rem(30px);
+    
+    @include tablets {
+        padding-top: 0;
+        width: 90%;;
+    }
 }
 
 .title--slogan {
     color: $yellow;
+    white-space: nowrap;
 }
 
 .slogan__text {

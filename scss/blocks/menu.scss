@@ -1,25 +1,19 @@
 .menu {
-    background: url(../img/menu_section/menu-bg.jpg) 0 0 no-repeat;
-    background-size: cover;
+    background: url(../img/menu_section/menu-bg.jpg) center center / cover no-repeat;
     position: relative;
 }
 
 .title--menu {
     position: absolute;
-    top: 13%;
+    top: 10%;
     left: 9%;
     color: white;
+
+    @include tablets {
+        left: 3%;
+	}
 }
 
-.menu__right-col {
-
-}
-
-@each $title-bg in (meat, vegetarian, diet) {
-    .h-accordeon__trigger--#{$title-bg} {
-        background: url(../img/menu_section/accord_#{$title-bg}.jpg) center center / cover no-repeat;
-    }
-}
 
 .h-accordeon__list {
     position: absolute;
@@ -40,11 +34,19 @@
     display: none;
     overflow: hidden;
     height: 100%;
-    padding-top: 10px;
+}
+
+.h-accordeon__content-text {
+    color: #fff;
+    font-size: rem(14px);
+    font-weight: 300;
+    padding-top: rem(60px);
+    padding-left: rem(32px);
+    line-height: 1.72;
 }
 
 .h-accordeon__content--active {
-    width: 540px;
+    width: rem(540px);
     display: block;
 }
 
@@ -52,15 +54,37 @@
 .h-accordeon__trigger {
     display: block;
     height: 100%;
-    width: 80px;
     width: rem(80px);
     position: relative;
+    &--meat {
+        background: url(../img/menu_section/accord_meat.jpg) center center / cover no-repeat;
+    }
+    &--vegetarian {
+        background: url(../img/menu_section/accord_vegetarian.jpg) 90% center / cover no-repeat;
+    }
+    &--diet {
+        background: url(../img/menu_section/accord_diet.jpg) 90% center / cover no-repeat;
+    }
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#474a4b, .7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    @include tablets {
+        width: rem(75px);
+    }
 }
 
 .h-accordeon__title {
     font-family: 'gagalin';
     color: white;
-    font-size: 40px;
+    font-size: rem(40px);
     text-align: center;
     white-space: nowrap;
     position: absolute;
@@ -69,6 +93,7 @@
     left: 50%;
     top: 100%;
     margin-top: -20px;
+    z-index: 10;
 }
 
 

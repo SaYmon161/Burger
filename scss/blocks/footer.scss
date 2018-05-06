@@ -1,5 +1,5 @@
 .footer {
-    height: 60px;
+    height: rem(60px);
     background: url(../img/map_section/footer-bg.jpg);
     position: absolute;
     bottom: 0;
@@ -23,7 +23,7 @@
 }
 
 .contacts__address {
-    font-size: 14px;
+    font-size: rem(14px);
     font-weight: 300;
     display: flex;
 }
@@ -31,7 +31,7 @@
 .contacts__phone {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: rem(14px);
     font-weight: 700;
     color: $orange;
 }
