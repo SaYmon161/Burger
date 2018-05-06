@@ -1,6 +1,16 @@
 .order {
     background: url(../img/order_section/order-bg.jpg) 0 0 / cover no-repeat;
     color: #fff;
+
+}
+
+.order__container {
+    align-items: center;
+}
+
+.title--order {
+    color: $yellow;
+    margin-bottom: 20px;
 }
 
 .form__content {
@@ -19,6 +29,13 @@
 
 .form__row {
     display: flex;
+    margin-bottom: rem(15px);
+}
+
+.form__title {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
 }
 
 .form__block {
@@ -35,7 +52,7 @@
     padding: 10px 15px;
     width: 100%;
     &--textarea {
-        height: 100px;
+        height: 110px;
         resize: none;
     }
 }
@@ -43,11 +60,13 @@
 .form__radio-lbl {
     display: flex;
     align-content: center;
+    margin-right: rem(15px);
 }
 
 .form__custom-radio {
     @include circle (16px, #fff);
     position: relative;
+    margin-right: rem(8px);
 }
 
 .form__radio {
@@ -71,6 +90,7 @@
     border-radius: 2px;
     background-color: #fff;
     position: relative;
+    margin-right: rem(10px);
 }
 
 .form__check {
@@ -94,9 +114,12 @@
 .button {
     border: 0;
     cursor: pointer;
+    margin-right: rem(10px);
 }
 
 .reset-btn {
     background: transparent;
     color: white;
+    font-size: 14px;
+    font-weight: 300;
 }

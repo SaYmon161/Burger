@@ -22,9 +22,27 @@
     width: calc(100%/3);
 }
 
-.best__item > div {
+.best__item div {
     text-align: center;
     height: rem(120px);
+}
+
+.best__item svg {
+    width: 97px;
+    height: 89px;
+}
+
+.best__item {
+    &:nth-child(1) svg {
+        fill: $orange;
+    }
+    &:nth-child(2) svg{
+        fill: $yellow;
+    }
+    &:nth-child(3) svg{
+        fill: $green;
+    }
+
 }
 
 .best__item h3 {

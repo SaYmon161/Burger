@@ -233,6 +233,11 @@ table {
   bottom: 9%;
   left: 49.5%; }
 
+.forward-arrow__pic {
+  width: 29px;
+  height: 14px;
+  fill: white; }
+
 .best {
   background: url(../img/best_section/bg.jpg) 0 0 no-repeat;
   background-size: cover; }
@@ -263,9 +268,22 @@ table {
   text-align: center;
   width: calc(100%/3); }
 
-.best__item > div {
+.best__item div {
   text-align: center;
   height: 7.5rem; }
+
+.best__item svg {
+  width: 97px;
+  height: 89px; }
+
+.best__item:nth-child(1) svg {
+  fill: #e25028; }
+
+.best__item:nth-child(2) svg {
+  fill: #f8b43a; }
+
+.best__item:nth-child(3) svg {
+  fill: #8ac03e; }
 
 .best__item h3 {
   font-family: "lifehack";
@@ -424,83 +442,65 @@ table {
   left: 9%;
   color: white; }
 
-.menu__right-col {
+.h-accordeon__trigger--meat {
+  background: url(../img/menu_section/accord_meat.jpg) center center/cover no-repeat; }
+
+.h-accordeon__trigger--vegetarian {
+  background: url(../img/menu_section/accord_vegetarian.jpg) center center/cover no-repeat; }
+
+.h-accordeon__trigger--diet {
+  background: url(../img/menu_section/accord_diet.jpg) center center/cover no-repeat; }
+
+.h-accordeon__list {
   position: absolute;
   top: 0%;
   right: 0%;
-  height: 100%;
-  background-color: rgba(47, 50, 52, 0.93); }
-
-.h-accordeon {
-  height: 100%; }
-
-.h-accordeon__list {
+  bottom: 0%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  height: 100%; }
+  background-color: rgba(47, 50, 52, 0.93); }
 
 .h-accordeon__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
+  height: 100%; }
 
 .h-accordeon__content {
   width: 0;
-  white-space: nowrap;
+  display: none;
   overflow: hidden;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+  height: 100%;
   padding-top: 10px; }
 
 .h-accordeon__content--active {
   width: 540px;
-  white-space: normal; }
+  display: block; }
+
+.h-accordeon__trigger {
+  display: block;
+  height: 100%;
+  width: 80px;
+  width: 5rem;
+  position: relative; }
 
 .h-accordeon__title {
   font-family: 'gagalin';
   color: white;
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: tb-lr;
-  writing-mode: vertical-lr;
-  -webkit-transform: rotate(-180deg);
-  -ms-transform: rotate(-180deg);
-  transform: rotate(-180deg);
-  width: 80px;
-  line-height: 100%;
   font-size: 40px;
-  height: 100%;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  padding-top: 43px;
-  padding-left: 15px;
-  background-size: auto; }
-
-.h-accordeon__title--meat {
-  background: url(../img/menu_section/accord_meat.jpg) 0 0 no-repeat; }
-
-.h-accordeon__title--vegetarian {
-  background: url(../img/menu_section/accord_vegetarian.jpg) 0 0 no-repeat; }
-
-.h-accordeon__title--diet {
-  background: url(../img/menu_section/accord_diet.jpg) 0 0 no-repeat; }
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  -webkit-transform: rotate(-90deg) translateY(-50%);
+  -ms-transform: rotate(-90deg) translateY(-50%);
+  transform: rotate(-90deg) translateY(-50%);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  left: 50%;
+  top: 100%;
+  margin-top: -20px; }
 
 .feedback__list {
   display: -webkit-box;
@@ -615,6 +615,15 @@ table {
   background: url(../img/order_section/order-bg.jpg) 0 0/cover no-repeat;
   color: #fff; }
 
+.order__container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.title--order {
+  color: #f8b43a;
+  margin-bottom: 20px; }
+
 .form__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -636,7 +645,13 @@ table {
 .form__row {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  margin-bottom: 0.9375rem; }
+
+.form__title {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 5px; }
 
 .form__block {
   -webkit-box-flex: 1;
@@ -652,7 +667,7 @@ table {
   padding: 10px 15px;
   width: 100%; }
   .form__input--textarea {
-    height: 100px;
+    height: 110px;
     resize: none; }
 
 .form__radio-lbl {
@@ -660,14 +675,16 @@ table {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: center;
-  align-content: center; }
+  align-content: center;
+  margin-right: 0.9375rem; }
 
 .form__custom-radio {
   width: 16px;
   height: 16px;
   border-radius: 8px;
   background-color: #fff;
-  position: relative; }
+  position: relative;
+  margin-right: 0.5rem; }
 
 .form__radio {
   position: absolute;
@@ -691,7 +708,8 @@ table {
   height: 16px;
   border-radius: 2px;
   background-color: #fff;
-  position: relative; }
+  position: relative;
+  margin-right: 0.625rem; }
 
 .form__check {
   position: absolute;
@@ -712,11 +730,14 @@ table {
 
 .button {
   border: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-right: 0.625rem; }
 
 .reset-btn {
   background: transparent;
-  color: white; }
+  color: white;
+  font-size: 14px;
+  font-weight: 300; }
 
 .map {
   background: url(../img/map_section/map-bg.jpg) center center/cover no-repeat;
@@ -731,7 +752,67 @@ table {
   right: 0;
   color: #fff; }
 
-.contacts__address, .contacts__phone {
-  display: block; }
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.footer__col {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .footer__col--right {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+.contacts__address {
+  font-size: 14px;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.contacts__phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #e25028; }
+
+.contacts__phone-icon {
+  fill: #e25028;
+  width: 13px;
+  height: 11px;
+  margin-right: 0.625rem; }
+
+.socials__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.socials__item {
+  margin-right: 1.25rem; }
+  .socials__item:last-child {
+    margin-right: 0; }
+
+.socials__icon {
+  width: 20px;
+  height: 20px;
+  fill: #5c5c5c; }
+  .socials__icon:hover {
+    fill: #fff; }
 
 /*# sourceMappingURL=main.css.map */

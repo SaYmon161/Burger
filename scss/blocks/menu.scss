@@ -12,64 +12,63 @@
 }
 
 .menu__right-col {
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    height: 100%;
-    background-color: rgba(47, 50, 52, .93);
+
 }
 
-.h-accordeon {
-    height: 100%;
+@each $title-bg in (meat, vegetarian, diet) {
+    .h-accordeon__trigger--#{$title-bg} {
+        background: url(../img/menu_section/accord_#{$title-bg}.jpg) center center / cover no-repeat;
+    }
 }
 
 .h-accordeon__list {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    height: 100%;
+    background-color: rgba(47, 50, 52, .93);
 }
 
 .h-accordeon__item {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
 }
 
 .h-accordeon__content {
     width: 0;
-    white-space: nowrap;
+    display: none;
     overflow: hidden;
-    align-self: flex-start;
+    height: 100%;
     padding-top: 10px;
 }
 
 .h-accordeon__content--active {
     width: 540px;
-    white-space: normal;
+    display: block;
 }
 
+
+.h-accordeon__trigger {
+    display: block;
+    height: 100%;
+    width: 80px;
+    width: rem(80px);
+    position: relative;
+}
 
 .h-accordeon__title {
     font-family: 'gagalin';
     color: white;
-    writing-mode: vertical-lr;
-    transform: rotate(-180deg);
-    width: 80px;
-    line-height: 100%;
     font-size: 40px;
-    height: 100%;
-    align-self: flex-end;
-    padding-top: 43px;
-    padding-left: 15px;
-    background-size: auto;
-}
-
-@each $title-bg in (meat, vegetarian, diet) {
-    .h-accordeon__title--#{$title-bg} {
-        background: url(../img/menu_section/accord_#{$title-bg}.jpg) 0 0 no-repeat;
-    }
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: 0 0;
+    left: 50%;
+    top: 100%;
+    margin-top: -20px;
 }
 
 
