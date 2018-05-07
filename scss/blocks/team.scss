@@ -27,11 +27,23 @@
 		text-align: center;
 		align-items: center;
 	}
+
+	@include phones {
+		width: 100%;
+		padding-left: 30px;
+	}
 }
 
 .title--team {
 	color: $yellow;
 	margin-bottom: rem(25px);
+
+	@include phones {
+		font-size: rem(45px);
+		letter-spacing: rem(3px);
+		padding-left: rem(10px);
+		margin-bottom: 15px;
+	}
 }
 
 
@@ -40,6 +52,10 @@
 	
 	@include tablets {
 		margin-bottom: 0;		
+	}
+
+	@include phones {
+		margin-bottom: 5px;		
 	}
 }
 
@@ -54,6 +70,8 @@
 		align-items: center;
 		margin-bottom: rem(20px);
 	}
+
+	
 }
 
 .v-accordeon__item--active {

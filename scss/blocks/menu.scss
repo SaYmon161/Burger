@@ -11,7 +11,13 @@
 
     @include tablets {
         left: 3%;
-	}
+    }
+    
+    @include phones {
+        font-size: rem(50px);
+        left: 13%;
+        top: 5%;
+    }
 }
 
 
@@ -78,6 +84,10 @@
 
     @include tablets {
         width: rem(75px);
+    }
+
+    @include phones {
+        width: rem(70px);
     }
 }
 
