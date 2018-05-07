@@ -25,7 +25,10 @@
 							<li class="nav__item"><a href="#" class="nav__link">отзывы</a></li>
 							<li class="nav__item"><a href="#" class="nav__link">контакты</a></li>
 						</ul>
-                        <a href="#" class="order-btn">заказать</a>
+						<a href="#" class="order-btn">заказать</a>
+						<a class="hamburger-menu-link" href="">
+							<div class="hamburger-menu-link__bars"></div>
+						</a>
 					</nav>
 				</header>
 				<div class="hello-block__container">
@@ -61,44 +64,50 @@
 						<li class="best__item">
 							<div>
 								<!-- <img src="img/best_section/meat.png" alt="Мясо"> -->
-								<svg width="97" height="89">
+								<svg width="97" height="89" fill="#e25028">
 									<use xlink:href="img/icons/mysprite.svg#meat"></use>
 								</svg>									
 							</div>
-							<h3>100% свежее мясо</h3>
-							<p>
-								Драма представляет собой 
-								деструктивный цикл. Анапест представляет собой 
-								анапест. Ямб неравномерен.
-							</p>
+							<div>
+								<h3>100% свежее мясо</h3>
+								<p>
+									Драма представляет собой 
+									деструктивный цикл. Анапест представляет собой 
+									анапест. Ямб неравномерен.
+								</p>
+							</div>
 						</li>
 						<li class="best__item">
 							<div>
 								<!-- <img src="img/best_section/hand.png" alt="Handmade"> -->
-								<svg width="97" height="89">
-									<use xlink:href="img/icons/mysprite.svg#hand"></use>
+								<svg width="97" height="89" fill="#f8b43a">
+									<use xlink:href="img/icons/mysprite.svg#hand" ></use>
 								</svg>
 							</div>
-							<h3>Ручная  сборка</h3>
-							<p>
-								Драма представляет собой 
-								деструктивный цикл. Анапест представляет собой 
-								анапест. Первое полустишие притягивает 
-								сюжетный реформаторский пафос.
-							</p>
+							<div>
+								<h3>Ручная  сборка</h3>
+								<p>
+									Драма представляет собой 
+									деструктивный цикл. Анапест представляет собой 
+									анапест. Первое полустишие притягивает 
+									сюжетный реформаторский пафос.
+								</p>
+							</div>
 						</li>
 						<li class="best__item">
 							<div>
 								<!-- <img src="img/best_section/natural.png" alt="Natural products"> -->
-								<svg width="97" height="89">
+								<svg width="97" height="89" fill="#8ac03e">
 									<use xlink:href="img/icons/mysprite.svg#natural"></use>
 								</svg>
+							</div>
+							<div>
+								<h3>Натуральные ингредиенты</h3>
+								<p>
+									Драма представляет собой деструктивный цикл. 
+									Анапест представляет собой анапест.
+								</p>
 							</div>                            
-							<h3>Натуральные ингредиенты</h3>
-							<p>
-								Драма представляет собой деструктивный цикл. 
-								Анапест представляет собой анапест.
-							</p>
 						</li>
 					</ul>
 				</div>
@@ -178,8 +187,8 @@
 					<a href="#" class="h-accordeon__trigger h-accordeon__trigger--meat">
 						<h3 class="h-accordeon__title">Для мясоедов</h3>
 					</a>
-					<div class="h-accordeon__content h-accordeon__content--active">
-						<div class="content__text">
+					<div class="h-accordeon__content">
+						<div class="h-accordeon__content-text">
 							Речевой акт редуцирует диалектический характер. 
 							Развивая эту тему, заимствование редуцирует 
 							конструктивный механизм сочленений. Лирический 
@@ -197,11 +206,11 @@
 					</div>
 				</li>
 				<li class="h-accordeon__item">
-					<a href="#" class="h-accordeon__trigger h-accordeon__trigger--vegetarian"></a>
+					<a href="#" class="h-accordeon__trigger h-accordeon__trigger--vegetarian">
 						<h3 class="h-accordeon__title ">Вегетарианское</h3>
 					</a>
 					<div class="h-accordeon__content">
-						<div class="content__text">
+						<div class="h-accordeon__content-text">
 							Речевой акт редуцирует диалектический характер. 
 							Развивая эту тему, заимствование редуцирует 
 							конструктивный механизм сочленений. Лирический 
@@ -219,11 +228,11 @@
 					</div>
 				</li>
 				<li class="h-accordeon__item">
-					<a href="#" class="h-accordeon__trigger h-accordeon__trigger--diet"></a>
+					<a href="#" class="h-accordeon__trigger h-accordeon__trigger--diet">
 						<h3 class="h-accordeon__title">диетическое</h3>
 					</a>
 					<div class="h-accordeon__content">
-						<div class="content__text">
+						<div class="h-accordeon__content-text">
 							Речевой акт редуцирует диалектический характер. 
 							Развивая эту тему, заимствование редуцирует 
 							конструктивный механизм сочленений. Лирический 
@@ -255,7 +264,8 @@
 							котлетка такой сочной, а сыр таким 
 							расплавленным.
 						</div>
-						<a class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1440606797942-6cc04c045447.png)">
@@ -269,7 +279,8 @@
 							котлетка такой сочной, а сыр таким 
 							расплавленным.
 						</div>
-						<a class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1445404590072-16ef9c18bd83.png)">
@@ -283,7 +294,8 @@
 							котлетка такой сочной, а сыр таким 
 							расплавленным.
 						</div>
-						<a class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1457706924510-773f3c796de3.png)">
@@ -298,6 +310,7 @@
 							расплавленным.
 						</div>
 						<a class="feedback__btn">подробнее</a>
+						<a class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1458696765561-12142eaead13.png)">
@@ -311,7 +324,8 @@
 							котлетка такой сочной, а сыр таким 
 							расплавленным.
 						</div>
-						<a class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1458890715264-db84f7c6ef13.png)">
@@ -325,7 +339,8 @@
 							котлетка такой сочной, а сыр таким 
 							расплавленным.
 						</div>
-						<a class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1461332682233-b818af4c3a6e.png)">
@@ -339,7 +354,8 @@
 							котлетка такой сочной, а сыр таким 
 							расплавленным.
 						</div>
-						<a class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1468546818829-25bb337b6646.png)">
@@ -353,156 +369,174 @@
 							котлетка такой сочной, а сыр таким 
 							расплавленным.
 						</div>
-						<a class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn">подробнее</a>
+						<a href="#" class="feedback__btn feedback__btn--mobile">читать отзыв</a>
 					</div>
 				</li>
 			</ul>
-    </section>
-    <section class="section order">
-      <div class="container order__container">
-        <h2 class="title title--order">закажите доставку</h2>
-        <div class="form">
-            <form action="get" class="form_elem">
-              	<div class="form__content">
-					<div class="form__col">
-						<div class="form__row">
-							<label class="form__block">
-								<div class="form__title">Имя</div>
-								<input type="text" class="form__input">
-							</label>
-							<label class="form__block">
-								<div class="form__title">Телефон</div>
-								<input type="text" class="form__input">
-							</label>
+    	</section>
+		<section class="section order">
+			<div class="container order__container">
+				<h2 class="title title--order">закажите доставку</h2>
+				<div class="form">
+					<form action="get" class="form_elem">
+						<div class="form__content">
+							<div class="form__col">
+								<div class="form__row">
+									<label class="form__block">
+										<div class="form__title">Имя</div>
+										<input type="text" class="form__input">
+									</label>
+									<label class="form__block">
+										<div class="form__title">Телефон</div>
+										<input type="text" class="form__input">
+									</label>
+								</div>
+								<div class="form__row">
+									<label class="form__block">
+										<div class="form__title">Улица</div>
+										<input type="text" class="form__input">
+									</label>
+								</div>
+								<div class="form__row">
+									<label class="form__block">
+										<div class="form__title">Дом</div>
+										<input type="text" class="form__input">
+									</label>
+									<label class="form__block">
+										<div class="form__title">Корпус</div>
+										<input type="text" class="form__input">
+									</label>
+										<label class="form__block">
+										<div class="form__title">Квартира</div>
+										<input type="text" class="form__input">
+									</label>
+									<label class="form__block">
+										<div class="form__title">Этаж</div>
+										<input type="text" class="form__input">
+									</label>
+								</div>
+							</div>
+							<div class="form__col">
+								<div class="form__row">
+									<label class="form__block">
+										<div class="form__title">Комментарий</div>
+										<textarea class="form__input form__input--textarea"></textarea>
+									</label>
+								</div>
+								<div class="form__row">
+									<label class="form__radio-lbl">
+										<input type="radio" checked name="pay-type" class="form__radio">
+										<div class="form__custom-radio"></div>
+										<div class="form__title">Потребуется сдача</div>
+									</label>
+									<label class="form__radio-lbl">
+										<input type="radio" name="pay-type" class="form__radio">
+										<div class="form__custom-radio"></div>
+										<div class="form__title">Оплата по карте</div>
+									</label>
+								</div>
+								<div class="form__row">
+									<label class="form__radio-lbl">
+										<input type="checkbox" class="form__check">
+										<div class="form__custom-check"></div>
+										<div class="form__title">Не перезванивать</div>
+									</label>
+								</div>
+								<div class="form__row">
+									<button type="submit" class="button order-btn">Заказать</button>
+									<button type="reset" class="button reset-btn">Очистить</button>
+								</div>
+							</div>
 						</div>
-						<div class="form__row">
-							<label class="form__block">
-								<div class="form__title">Улица</div>
-								<input type="text" class="form__input">
-							</label>
-						</div>
-						<div class="form__row">
-							<label class="form__block">
-								<div class="form__title">Дом</div>
-								<input type="text" class="form__input">
-							</label>
-							<label class="form__block">
-								<div class="form__title">Корпус</div>
-								<input type="text" class="form__input">
-							</label>
-								<label class="form__block">
-								<div class="form__title">Квартира</div>
-								<input type="text" class="form__input">
-							</label>
-							<label class="form__block">
-								<div class="form__title">Этаж</div>
-								<input type="text" class="form__input">
-							</label>
-						</div>
-					</div>
-					<div class="form__col">
-						<div class="form__row">
-							<label class="form__block">
-								<div class="form__title">Комментарий</div>
-								<textarea class="form__input form__input--textarea"></textarea>
-							</label>
-						</div>
-						<div class="form__row">
-							<label class="form__radio-lbl">
-								<input type="radio" checked name="pay-type" class="form__radio">
-								<div class="form__custom-radio"></div>
-								<div class="form__title">Потребуется сдача</div>
-							</label>
-							<label class="form__radio-lbl">
-								<input type="radio" name="pay-type" class="form__radio">
-								<div class="form__custom-radio"></div>
-								<div class="form__title">Оплата по карте</div>
-							</label>
-						</div>
-						<div class="form__row">
-							<label class="form__radio-lbl">
-								<input type="checkbox" class="form__check">
-								<div class="form__custom-check"></div>
-								<div class="form__title">Не перезванивать</div>
-							</label>
-						</div>
-						<div class="form__row">
-							<button type="submit" class="button order-btn">Заказать</button>
-							<button type="reset" class="button reset-btn">Очистить</button>
-						</div>
-					</div>
-				</div>
-			</form>
-        </div>
-      </div>
-    </section>
-    <section class="section map">
-    	<footer class="footer">
-			<div class="container">
-				<div class="footer__content">
-					<div class="footer__col footer__col--left">
-						<div class="contacts">
-							<span class="contacts__address">
-								Санкт-Петербург, ул.Бабушкина, д.12/1, 15
-							</span>
-							<a href="tel:+78123771377" class="contacts__phone">
-								<svg class="contacts__phone-icon" width="13" height="11">
-									<use xlink:href="img/icons/mysprite.svg#phone"></use>
-								</svg>
-								<span class="contacts__phone-text">+7 (812) 377-13-77</span>
-							</a>
-						</div>
-					</div>
-					<div class="footer__col footer__col--right">
-						<div class="socials">
-							<ul class="socials__list">
-								<li class="socials__item">
-									<a href="#" class="socials__link">
-										<svg class="socials__icon" width="20" height="20">
-											<use xlink:href="img/icons/mysprite.svg#vk"></use>
-										</svg>
-									</a>
-								</li>
-								<li class="socials__item">
-									<a href="#" class="socials__link">
-										<svg class="socials__icon" width="20" height="20">
-											<use xlink:href="img/icons/mysprite.svg#fb"></use>
-										</svg>									
-									</a>
-								</li>
-								<li class="socials__item">
-									<a href="#" class="socials__link">
-										<svg class="socials__icon" width="20" height="20">
-											<use xlink:href="img/icons/mysprite.svg#inst"></use>
-										</svg>									
-									</a>
-								</li>
-								<li class="socials__item">
-									<a href="#" class="socials__link">
-										<svg class="socials__icon" width="20" height="20">
-											<use xlink:href="img/icons/mysprite.svg#twitter"></use>
-										</svg>									
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
-    	</footer>
-    </section>
-		<aside class="pagination">
-			<ul class="pagination__list">
-				<li class="pagination__item"></li>
-				<li class="pagination__item"></li>
-				<li class="pagination__item"></li>
-				<li class="pagination__item"></li>
-				<li class="pagination__item"></li>
-				<li class="pagination__item"></li>
-				<li class="pagination__item"></li>
-				<li class="pagination__item"></li>
-			</ul>
-		</aside>
-  </div>
+		</section>
+		<section class="section map">
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__content">
+						<div class="footer__col footer__col--left">
+							<div class="contacts">
+								<span class="contacts__address">
+									Санкт-Петербург, ул.Бабушкина, д.12/1, 15
+								</span>
+								<a href="tel:+78123771377" class="contacts__phone">
+									<svg class="contacts__phone-icon" width="13" height="11">
+										<use xlink:href="img/icons/mysprite.svg#phone"></use>
+									</svg>
+									<span class="contacts__phone-text">+7 (812) 377-13-77</span>
+								</a>
+							</div>
+						</div>
+						<div class="footer__col footer__col--right">
+							<div class="socials">
+								<ul class="socials__list">
+									<li class="socials__item">
+										<a href="#" class="socials__link">
+											<svg class="socials__icon" width="20" height="20">
+												<use xlink:href="img/icons/mysprite.svg#vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="socials__item">
+										<a href="#" class="socials__link">
+											<svg class="socials__icon" width="20" height="20">
+												<use xlink:href="img/icons/mysprite.svg#fb"></use>
+											</svg>									
+										</a>
+									</li>
+									<li class="socials__item">
+										<a href="#" class="socials__link">
+											<svg class="socials__icon" width="20" height="20">
+												<use xlink:href="img/icons/mysprite.svg#inst"></use>
+											</svg>									
+										</a>
+									</li>
+									<li class="socials__item">
+										<a href="#" class="socials__link">
+											<svg class="socials__icon" width="20" height="20">
+												<use xlink:href="img/icons/mysprite.svg#twitter"></use>
+											</svg>									
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+	<aside class="pagination">
+		<ul class="pagination__list">
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#" class="pagination__link"></a>
+			</li>
+			
+		</ul>
+	</aside>
 </body>
 </html>
