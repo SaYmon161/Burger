@@ -6,11 +6,20 @@
     left: 0;
     right: 0;
     color: #fff;
+
+    @include phones {
+        height: auto;
+    }
 }
 
 .footer__content {
     display: flex;
     flex-direction: row;
+
+    @include phones {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .footer__col {
@@ -18,6 +27,22 @@
     display: flex;
     &--right {
         justify-content: flex-end;
+        align-items: center;
+    }
+    @include phones {
+        justify-content: center;
+    }
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include phones {
         align-items: center;
     }
 }
