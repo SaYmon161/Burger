@@ -46,7 +46,7 @@
 
     @include phones {
         text-align: left;
-        margin-right: rem(35px);
+        margin-right: rem(25px);
         &:last-child {
             margin-right: 0;
         }

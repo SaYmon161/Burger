@@ -11,6 +11,16 @@
 .title--order {
     color: $yellow;
     margin-bottom: rem(20px);
+
+    @include tablets {
+        line-height: 0.8;
+        text-align: center;
+    }
+
+    @include phones {
+        font-size: rem(50px);
+        width: 80%;
+    }
 }
 
 .form__content {
@@ -31,7 +41,12 @@
         margin-right: 0;
     }
     @include tablets {
-        width: 66%;  
+        width: 66%;
+        margin-right: 0;  
+    }
+
+    @include phones {
+        width: 100%;
     }
 }
 
