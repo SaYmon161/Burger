@@ -41,7 +41,7 @@ html {
       font-size: 16px; } }
   @media screen and (max-width: 480px) {
     html {
-      font-size: 16px; } }
+      font-size: 12px; } }
 
 body {
   margin: 0;
@@ -98,6 +98,9 @@ table {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  @media screen and (max-width: 480px) {
+    .container {
+      width: 98%; } }
 
 .section {
   width: 100%;
@@ -270,6 +273,9 @@ table {
       -ms-flex-pack: center;
       justify-content: center;
       text-align: center; } }
+  @media screen and (max-width: 480px) {
+    .hello-block__content {
+      padding-left: 0; } }
 
 .hello-block__pic-wrap {
   width: 50%; }
@@ -279,8 +285,7 @@ table {
 
 .hello-block__picture {
   width: 100%;
-  max-width: 480px;
-  min-width: 360px; }
+  max-width: 480px; }
 
 .hello-block__slogan {
   width: 50%;
@@ -291,19 +296,22 @@ table {
       width: 90%; } }
 
 .title--slogan {
-  color: #f8b43a;
-  white-space: nowrap; }
+  color: #f8b43a; }
 
 .slogan__text {
   font-size: 4.0625rem;
   font-family: "lifehack";
   color: #fff;
   line-height: 0.98; }
+  @media screen and (max-width: 480px) {
+    .slogan__text {
+      font-size: 3.125rem; } }
 
 .forward-arrow {
   position: absolute;
   bottom: 9%;
-  left: 49.5%; }
+  left: 49.5%;
+  cursor: pointer; }
 
 .forward-arrow__pic {
   width: 29px;

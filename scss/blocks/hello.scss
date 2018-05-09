@@ -32,6 +32,10 @@
         text-align: center;
 
     }
+
+    @include phones {
+        padding-left: 0;
+    }
 }
 
 .hello-block__pic-wrap {
@@ -45,7 +49,7 @@
 .hello-block__picture {
     width: 100%;
     max-width: 480px;
-    min-width: 360px;
+    // min-width: 360px;
 }
 
 .hello-block__slogan {
@@ -60,7 +64,6 @@
 
 .title--slogan {
     color: $yellow;
-    white-space: nowrap;
 }
 
 .slogan__text {
@@ -68,12 +71,17 @@
     font-family: "lifehack";
     color: #fff;
     line-height: 0.98;
+
+    @include phones {
+        font-size: rem(50px);;
+    }
 }
 
 .forward-arrow {
     position: absolute;
     bottom: 9%;
     left: 49.5%;
+    cursor: pointer;
 }
 
 .forward-arrow__pic {
