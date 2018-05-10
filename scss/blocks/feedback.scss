@@ -1,107 +1,122 @@
 .feedback__list {
-    width: 100%;
-    font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
 }
 
 .feedback__item {
-    display: inline-block;
-    overflow: hidden;
-    width: 25%;
-    height: 50vh;
-    position: relative;
+  display: flex;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 25%;
+  height: 50%;
+  position: relative;
+  filter: grayscale(100%);
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 9;
+    transition: 0.3;
+  }
+  &:hover {
+    .feedback__content {
+      opacity: 1;
+    }
     &:after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        z-index: 9;
-        transition: 0.3;
+      opacity: 0.6;
     }
-    &:hover {
-        .feedback__content {
-            opacity: 1;
-        }   
-        &:after {
-            opacity: 0.6;
-        }
-    }
+  }
+
+  @include tablets {
+    width: 50%;
+    height: 25%;
+  }
 }
 
 .feedback__content {
-    position: absolute;
-    top: 14%;
-    left: 7%;
-    opacity: 0;
-    z-index: 10;
+  position: absolute;
+  top: 14%;
+  left: 7%;
+  opacity: 0;
+  z-index: 10;
+  
+  @include tablets {
+    text-align: center;
+    left: 14%;
+    width: 75%;
+    margin: 0 auto;
+
+    
+  }
 }
 
 .feedback__subtitle {
-    font-size: rem(14px);
-    font-family: "gagalin";
-    margin-bottom: 20px;
-    color: #fff;
-    text-transform: uppercase;
+  font-size: rem(14px);
+  font-family: "gagalin";
+  margin-bottom: rem(20px);
+  color: #fff;
+  text-transform: uppercase;
+
+  @include tablets {
+    margin-bottom: rem(10px);
+  }
+
+  @include phones {
+    font-size: rem(25px);
+  }
 }
 
 .feedback__text {
-    font-size: 14px;
-    color: #fff;
-    width: calc(210/275*100%);
-    line-height: 1.72;
-    margin-bottom: 11px;
+  font-size: rem(14px);
+  color: #fff;
+  width: calc(210/275*100%);
+  line-height: 1.72;
+  margin-bottom: rem(11px);
+
+  @include tablets {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  @include phones {
+    display: none;
+  }
 }
 
 .feedback__btn {
-    width: 110px;
-    height: 35px;
-    font-size: 13px;
-    background-color: $dark;
-    border-radius: 5px;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    font-weight: 500;
-    line-height: 35px;
-    cursor: pointer;
-    &:hover {
-        background-color: darken($dark, 20%)
-    }
+  display: inline-block;
+  padding: rem(10px) rem(15px);
+  font-size: rem(13px);
+  background-color: $dark;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  &:hover {
+    background-color: darken($dark, 20%)
+  }
+
+  @include phones {
+    display: none;
+  }
 }
 
-.feedback__avatar {
-    position: relative;
-    height: 100%;
-    filter: grayscale(100%);
-    z-index: 1;
-}
+.feedback__btn--mobile {
+  display: none;
 
-.feedback__avatar--long {
-    width: 100%;
-    height: initial;
+  @include phones {
+    display: block;
+  }
 }
-
-.feedback__avatar--pic3 {
-    right: 25%;;
-}
-
-.feedback__avatar--pic4 {
-    right: 25%;
-}
-
-.feedback__avatar--pic5 {
-    right: 25%;
-}
-
-.feedback__avatar--pic6 {
-    bottom: 10%;
-}
-
-.feedback__avatar--pic7 {
-    right: 40%;
-}
-
 

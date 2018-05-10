@@ -1,0 +1,148 @@
+.order {
+    background: url(../img/order_section/order-bg.jpg) 0 0 / cover no-repeat;
+    color: #fff;
+
+}
+
+.order__container {
+    align-items: center;
+}
+
+.title--order {
+    color: $yellow;
+    margin-bottom: rem(20px);
+
+    @include tablets {
+        line-height: 0.8;
+        text-align: center;
+    }
+
+    @include phones {
+        font-size: rem(50px);
+        width: 80%;
+    }
+}
+
+.form__content {
+    display: flex;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;  
+    }
+}
+
+.form__col {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: rem(20px);
+    &:last-child {
+        margin-right: 0;
+    }
+    @include tablets {
+        width: 66%;
+        margin-right: 0;  
+    }
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.form__row {
+    display: flex;
+    margin-bottom: rem(15px);
+}
+
+.form__title {
+    font-size: rem(14px);
+    font-weight: 300;
+    margin-bottom: rem(5px);
+}
+
+.form__block {
+    flex: 1;
+    margin-right: rem(20px);
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.form__input {
+    border: none;
+    border-radius: 5px;
+    padding: rem(10px) rem(15px);
+    width: 100%;
+    &--textarea {
+        height: 110px;
+        resize: none;
+    }
+}
+
+.form__radio-lbl {
+    display: flex;
+    align-content: center;
+    margin-right: rem(15px);
+}
+
+.form__custom-radio {
+    @include circle (16px, #fff);
+    position: relative;
+    margin-right: rem(8px);
+}
+
+.form__radio {
+    position: absolute;
+    left: -999999px;
+    &:checked ~ .form__custom-radio:after {
+        content: '';
+        display: block;
+        @include circle (8px, $orange);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+}
+
+.form__custom-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: relative;
+    margin-right: rem(10px);
+}
+
+.form__check {
+    position: absolute;
+    left: -99999px;
+    &:checked + .form__custom-check::after{
+        content: '';
+        display: block;
+        height: 7px;
+        width: 10px;
+        border-left: 4px solid $orange;
+        border-bottom: 4px solid $orange;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%) rotate(-45deg);
+        
+    }
+}
+
+.button {
+    border: 0;
+    cursor: pointer;
+    margin-right: rem(10px);
+}
+
+.reset-btn {
+    background: transparent;
+    color: white;
+    font-size: rem(14px);
+    font-weight: 300;
+}
