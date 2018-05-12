@@ -1141,3 +1141,9 @@ table {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg); }
+
+.burgers {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #f8b43a), color-stop(50%, #e25028), color-stop(80%, #f8b43a));
+  background: -webkit-linear-gradient(top, #f8b43a 20%, #e25028 50%, #f8b43a 80%);
+  background: -o-linear-gradient(top, #f8b43a 20%, #e25028 50%, #f8b43a 80%);
+  background: linear-gradient(to bottom, #f8b43a 20%, #e25028 50%, #f8b43a 80%); }
