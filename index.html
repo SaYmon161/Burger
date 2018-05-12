@@ -10,23 +10,23 @@
 </head>
 <body>
 	<div class="wrapper">
-		<section class="section hello-block">
+		<section class="section hello-block" id="hello-block">
 			<div class="container hello-block__inner-container">
 				<header class="header">
-					<div class="header__logo">
+					<div class="logo">
 						<img src="./img/hello_section/logo.svg" alt="Мистер Бургер" class="logo__img">
 					</div>
 					<nav class="header__navigation">
 						<ul class="nav__list">
-							<li class="nav__item"><a href="#" class="nav__link">о нас</a></li>
+							<li class="nav__item"><a href="#best" class="nav__link">о нас</a></li>
 							<li class="nav__item"><a href="#" class="nav__link">бургеры</a></li>
-							<li class="nav__item"><a href="#" class="nav__link">команда</a></li>
-							<li class="nav__item"><a href="#" class="nav__link">меню</a></li>
-							<li class="nav__item"><a href="#" class="nav__link">отзывы</a></li>
-							<li class="nav__item"><a href="#" class="nav__link">контакты</a></li>
+							<li class="nav__item"><a href="#team" class="nav__link">команда</a></li>
+							<li class="nav__item"><a href="#menu" class="nav__link">меню</a></li>
+							<li class="nav__item"><a href="#feedback" class="nav__link">отзывы</a></li>
+							<li class="nav__item"><a href="#map" class="nav__link">контакты</a></li>
 						</ul>
-						<a href="#" class="order-btn">заказать</a>
-						<a class="hamburger-menu-link" href="">
+						<a href="#order" class="order-btn">заказать</a>
+						<a class="hamburger-menu-link" href="#">
 							<div class="hamburger-menu-link__bars"></div>
 						</a>
 					</nav>
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section best">
+		<section class="section best" id="best">
 			<div class="container">
 				<h2 class="title title--best">
 					Мы лучшие
@@ -113,7 +113,18 @@
 				</div>
 			</div>
 		</section>
-		<section class="section team">
+		<section class="section burgers">
+			<div class="left-block">
+				<a href="#" class="arrow-left"></a>
+			</div>
+			<div class="slider-block">
+				
+			</div>
+			<div class="right-block">
+				<a href="#" class="arrow-right"></a>
+			</div>
+		</section>
+		<section class="section team" id="team">
 			<div class="team__right-col">
 				<div class="team__content">
 					<h2 class="title title--team">команда</h2>
@@ -180,7 +191,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section menu">
+		<section class="section menu" id="menu">
 			<h2 class="title title--menu">меню</h2>
 			<ul class="h-accordeon__list">
 				<li class="h-accordeon__item">
@@ -251,7 +262,7 @@
 				</li>
 			</ul>
 		</section>
-		<section class="section section--feedback">
+		<section class="section feedback" id="feedback">
 			<ul class="feedback__list">
 				<li class="feedback__item" style="background-image: url(img/feedback_section/photo-1438763298591-75a0d42b7265.png)">
 					<div class="feedback__content">
@@ -375,7 +386,7 @@
 				</li>
 			</ul>
     	</section>
-		<section class="section order">
+		<section class="section order" id="order">
 			<div class="container order__container">
 				<h2 class="title title--order">закажите доставку</h2>
 				<div class="form">
@@ -453,7 +464,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section map">
+		<section class="section map" id="map">
 			<footer class="footer">
 				<div class="container">
 					<div class="footer__content">
@@ -508,35 +519,52 @@
 				</div>
 			</footer>
 		</section>
-		<aside class="pagination">
-			<ul class="pagination__list">
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				<li class="pagination__item">
-					<a href="#" class="pagination__link"></a>
-				</li>
-				
+	</div>
+	<aside class="pagination">
+		<ul class="pagination__list">
+			<li class="pagination__item">
+				<a href="#hello-block" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#best" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#burgers" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#team" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#menu" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#feedback" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#order" class="pagination__link"></a>
+			</li>
+			<li class="pagination__item">
+				<a href="#map" class="pagination__link"></a>
+			</li>		
+		</ul>
+	</aside>
+	<div class="hamburger-menu">
+		<div class="logo logo--hamburger-menu">
+			<img src="./img/hello_section/logo.svg" alt="Мистер Бургер" class="logo__img">
+		</div>
+		<div class="close">
+
+		</div>
+		<nav class="nav">
+			<ul class="nav__list nav__list--hamburger-menu">
+				<li class="nav__item"><a href="#best" class="nav__link">о нас</a></li>
+				<li class="nav__item"><a href="#burgers" class="nav__link">бургеры</a></li>
+				<li class="nav__item"><a href="#team" class="nav__link">команда</a></li>
+				<li class="nav__item"><a href="#menu" class="nav__link">меню</a></li>
+				<li class="nav__item"><a href="#feedback" class="nav__link">отзывы</a></li>
+				<li class="nav__item"><a href="#map" class="nav__link">контакты</a></li>
 			</ul>
-		</aside>
+		</nav>
 	</div>
 </body>
 </html>

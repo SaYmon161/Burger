@@ -130,7 +130,7 @@ table {
   display: -ms-flexbox;
   display: flex; }
 
-.header__logo {
+.logo {
   width: 10.5%;
   min-width: 5rem; }
 
@@ -163,9 +163,7 @@ table {
     height: 4px;
     border-radius: 2px;
     background-color: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
     margin-left: 0.9375rem;
     margin-right: 0.9375rem; }
   .nav__item:last-child:after {
@@ -1069,3 +1067,77 @@ table {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 10; }
+
+.hamburger-menu {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(47, 50, 52, 0.99);
+  display: none; }
+
+.logo--hamburger-menu {
+  position: absolute;
+  left: 2.5%;
+  top: 0.5625rem; }
+
+.nav__list--hamburger-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 0;
+  padding-left: 1.5625rem;
+  height: 100vh; }
+
+.nav__list--hamburger-menu .nav__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.nav__list--hamburger-menu .nav__item:after {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center; }
+
+.nav__list--hamburger-menu .nav__link {
+  font-size: 1.5rem; }
+
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 29px;
+  width: 4px;
+  display: block;
+  background-color: #fff; }
+
+.close {
+  position: absolute;
+  top: 2%;
+  right: 6.5%; }
+  .close:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .close:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
