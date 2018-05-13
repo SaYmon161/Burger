@@ -1163,6 +1163,10 @@ table {
       -ms-flex-pack: center;
       justify-content: center;
       margin: 0 2%; } }
+  @media screen and (max-width: 480px) {
+    .container--burgers {
+      margin: 0 0;
+      width: 100%; } }
 
 .left-block {
   padding-left: 10px; }
@@ -1249,6 +1253,10 @@ table {
     .ingredients {
       left: 12%;
       top: 3%; } }
+  @media screen and (max-width: 480px) {
+    .ingredients {
+      left: -5%;
+      top: 8%; } }
 
 .ingredients__pic {
   fill: white; }
@@ -1282,6 +1290,10 @@ table {
     .kkal {
       bottom: 87%;
       left: 77%; } }
+  @media screen and (max-width: 480px) {
+    .kkal {
+      bottom: 83%;
+      left: 94%; } }
 
 .kkal__pic {
   fill: white; }
@@ -1308,7 +1320,7 @@ table {
   @media screen and (max-width: 480px) {
     .slider__pic-wrap {
       width: 100%;
-      margin-bottom: 0%; } }
+      margin-bottom: 1%; } }
 
 .slider__pic {
   width: 100%; }
@@ -1340,9 +1352,10 @@ table {
       margin-bottom: 5%; } }
   @media screen and (max-width: 480px) {
     .slider__title {
-      width: 100%;
+      width: 98%;
       margin-bottom: 0%;
-      font-size: 3.125rem; } }
+      font-size: 3.125rem;
+      line-height: 1.1; } }
 
 .slider__text {
   color: white;
@@ -1355,7 +1368,7 @@ table {
   @media screen and (max-width: 480px) {
     .slider__text {
       width: 100%;
-      margin-bottom: 0%; } }
+      margin-bottom: 4%; } }
 
 .slider__order {
   display: -webkit-box;
@@ -1367,12 +1380,27 @@ table {
   @media screen and (max-width: 768px) {
     .slider__order {
       width: 54%; } }
+  @media screen and (max-width: 480px) {
+    .slider__order {
+      width: 73%;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
 
 .price {
   font-family: 'gagalin';
   font-size: 1.875rem;
   color: #e25028;
   margin-right: 3.5%; }
+  @media screen and (max-width: 480px) {
+    .price {
+      font-size: 1.5rem; } }
+  @media screen and (max-width: 480px) {
+    .price {
+      margin-right: 10%; } }
 
 .price__number {
   font-size: 4.5rem; }
+  @media screen and (max-width: 480px) {
+    .price__number {
+      font-size: 3.125rem; } }
