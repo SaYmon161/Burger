@@ -1,3 +1,215 @@
 .burgers {
-    background: linear-gradient(to bottom, $yellow 20%, $orange 50%, $yellow 80%);
+    background: linear-gradient(to bottom, $yellow 20%, #eb8c38 50%, $yellow 80%);
+    
+    
+}
+
+.container--burgers {
+    flex-direction: row;
+    align-items: center;
+    max-width: none;
+    margin: 0 3%;
+    
+    @include tablets {
+        justify-content: center;
+        margin: 0 2%;
+        
+    }
+}
+
+.left-block {
+    padding-left: 10px;
+}
+
+.arrow-right__pic {
+    fill: white;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+.arrow-left__pic {
+    fill: white;
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+.slider {
+    height: 90%;
+    display: flex;
+    align-items: center;
+
+    @include tablets {
+        width: 89%;
+    }
+
+}
+
+.slider__list {
+    height: 55%;
+
+    @include tablets {
+        height: 100%;
+    }
+}
+
+.slider__item {
+    height: 100%;
+    display: flex;
+    position: relative;
+    padding-top: 5%;
+    align-items: center;
+
+    @include tablets {
+        flex-direction: column;
+        padding-top: 13%;
+        justify-content: center;
+    }
+}
+
+.ingredients {
+    width: rem(90px);
+    height: rem(90px);
+    position: absolute;
+    top: 0;
+    left: 1%;
+    background-color: #f08c33;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablets {
+        left: 12%;
+        top: 3%;
+    }
+}
+
+.ingredients__pic {
+    fill: white;
+}
+
+.ingredients__desc {
+    font-family: 'gagalin';
+    font-size: rem(14px);
+    color: white;
+}
+
+.kkal {
+    width: rem(60px);
+    height: rem(78px);
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablets {
+        bottom: 87%;
+        left: 77%;
+    }
+}
+
+.kkal__pic {
+    fill: white;
+}
+
+.kkal__pic-text {
+    fill: white;
+    font-size: rem(20px);
+    font-family: 'gagalin';    
+}
+
+.kkal__desc {
+    font-family: 'gagalin';
+    font-size: rem(14px);
+    color: white;
+}
+
+.slider__pic-wrap {
+    padding-top: 3%;
+    width: 51%;
+    margin-right: 2%;
+
+    @include tablets {
+        width: 75%;
+        margin-right: 0;
+        margin-bottom: 2%;
+    }
+    
+    @include phones {
+        width: 100%;
+        margin-bottom: 0%;
+    }
+}
+
+.slider__pic {
+    width: 100%;
+}
+
+.slider__desc {
+    width: 49%;
+    
+    @include tablets {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.slider__title {
+    color: white;
+    line-height: .9;
+    margin-bottom: 10%;
+
+    @include tablets {
+        width: 89%;
+        margin-bottom: 5%;
+    }
+
+    @include phones {
+        width: 100%;
+        margin-bottom: 0%;
+        font-size: rem(50px);
+    }
+}
+
+.slider__text {
+    color: white;
+    font-size: rem(14px);
+    line-height: 1.7;
+    margin-bottom: 2%;
+
+    @include tablets {
+        width: 89%;
+    }
+
+    @include phones {
+        width: 100%;
+        margin-bottom: 0%;
+    }
+}
+
+.slider__order {
+    display: flex;
+    align-items: baseline;
+    
+    @include tablets {
+        width: 54%;
+    }
+}
+
+.price {
+    font-family: 'gagalin';
+    font-size: rem(30px);
+    color: $orange;
+    margin-right: 3.5%;
+}
+
+.price__number {
+    font-size: rem(72px);
 }
