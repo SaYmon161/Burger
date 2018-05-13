@@ -1255,7 +1255,7 @@ table {
       top: 3%; } }
   @media screen and (max-width: 480px) {
     .ingredients {
-      left: -5%;
+      left: -7%;
       top: 8%; } }
 
 .ingredients__pic {
@@ -1293,7 +1293,7 @@ table {
   @media screen and (max-width: 480px) {
     .kkal {
       bottom: 83%;
-      left: 94%; } }
+      left: 92%; } }
 
 .kkal__pic {
   fill: white; }
