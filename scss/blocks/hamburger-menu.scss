@@ -9,6 +9,10 @@
     display: none;
 }
 
+.logo__link {
+    width: 100%;
+}
+
 .logo--hamburger-menu {
     position: absolute;
     left: 2.5%;
@@ -55,8 +59,9 @@
 
 .close {
     position: absolute;
-    top: 2%;
-    right: 6.5%;
+    top: 2.5%;
+    right: 8%;
+    cursor: pointer;
     &:before {
         transform: rotate(45deg);
     }

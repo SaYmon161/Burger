@@ -14,7 +14,7 @@
 			<div class="container hello-block__inner-container">
 				<header class="header">
 					<div class="logo">
-						<img src="./img/hello_section/logo.svg" alt="Мистер Бургер" class="logo__img">
+						<a class="logo__link" href="#hello-block"><img src="./img/hello_section/logo.svg" alt="Мистер Бургер" class="logo__img"></a>
 					</div>
 					<nav class="header__navigation">
 						<ul class="nav__list">
@@ -26,7 +26,7 @@
 							<li class="nav__item"><a href="#map" class="nav__link">контакты</a></li>
 						</ul>
 						<a href="#order" class="order-btn">заказать</a>
-						<a class="hamburger-menu-link" href="#">
+						<a class="hamburger-menu-link" id="hamburger-menu-link" href="#">
 							<div class="hamburger-menu-link__bars"></div>
 						</a>
 					</nav>
@@ -599,21 +599,22 @@
 	</aside>
 	<div class="hamburger-menu">
 		<div class="logo logo--hamburger-menu">
-			<img src="./img/hello_section/logo.svg" alt="Мистер Бургер" class="logo__img">
+			<a class="logo__link" id="logo__link" href="#hello-block"><img src="./img/hello_section/logo.svg" alt="Мистер Бургер" class="logo__img"></a>
 		</div>
 		<div class="close">
 
 		</div>
 		<nav class="nav">
 			<ul class="nav__list nav__list--hamburger-menu">
-				<li class="nav__item"><a href="#best" class="nav__link">о нас</a></li>
-				<li class="nav__item"><a href="#burgers" class="nav__link">бургеры</a></li>
-				<li class="nav__item"><a href="#team" class="nav__link">команда</a></li>
-				<li class="nav__item"><a href="#menu" class="nav__link">меню</a></li>
-				<li class="nav__item"><a href="#feedback" class="nav__link">отзывы</a></li>
-				<li class="nav__item"><a href="#map" class="nav__link">контакты</a></li>
+				<li class="nav__item" id="nav__item"><a href="#best" class="nav__link">о нас</a></li>
+				<li class="nav__item" id="nav__item"><a href="#burgers" class="nav__link">бургеры</a></li>
+				<li class="nav__item" id="nav__item"><a href="#team" class="nav__link">команда</a></li>
+				<li class="nav__item" id="nav__item"><a href="#menu" class="nav__link">меню</a></li>
+				<li class="nav__item" id="nav__item"><a href="#feedback" class="nav__link">отзывы</a></li>
+				<li class="nav__item" id="nav__item"><a href="#map" class="nav__link">контакты</a></li>
 			</ul>
 		</nav>
 	</div>
+	<script src="js/index.js"></script>
 </body>
 </html>

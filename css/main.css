@@ -1077,6 +1077,9 @@ table {
   background-color: rgba(47, 50, 52, 0.99);
   display: none; }
 
+.logo__link {
+  width: 100%; }
+
 .logo--hamburger-menu {
   position: absolute;
   left: 2.5%;
@@ -1130,8 +1133,9 @@ table {
 
 .close {
   position: absolute;
-  top: 2%;
-  right: 6.5%; }
+  top: 2.5%;
+  right: 8%;
+  cursor: pointer; }
   .close:before {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
