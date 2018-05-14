@@ -139,12 +139,15 @@
 .table__pic {
     width: rem(72px);
     height: rem(50px);
-    font-size: rem(14px);
-    font-weight: 500;
 }
 
 .table__comp {
     width: rem(124px);
+    font-size: rem(14px);
+    font-weight: 500;
+}
+
+.table__weight {
     font-size: rem(14px);
     font-weight: 300;
 }

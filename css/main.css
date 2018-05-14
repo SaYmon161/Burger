@@ -1324,12 +1324,14 @@ table {
 
 .table__pic {
   width: 4.5rem;
-  height: 3.125rem;
-  font-size: 0.875rem;
-  font-weight: 500; }
+  height: 3.125rem; }
 
 .table__comp {
   width: 7.75rem;
+  font-size: 0.875rem;
+  font-weight: 500; }
+
+.table__weight {
   font-size: 0.875rem;
   font-weight: 300; }
 
