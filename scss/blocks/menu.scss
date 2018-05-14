@@ -37,9 +37,9 @@
 
 .h-accordeon__content {
     width: 0;
-    display: none;
     overflow: hidden;
     height: 100%;
+    transition: width .6s;
 }
 
 .h-accordeon__content-text {
@@ -48,19 +48,30 @@
     font-weight: 300;
     padding-top: rem(60px);
     padding-left: rem(32px);
+    padding-right: rem(5px);
     line-height: 1.72;
+    opacity: 0;
+    transition: .2s opacity;
 
     @include phones {
         font-size: rem(12px);
         padding-left: rem(10px);
+        padding-top: rem(10px);
     }
 }
 
-.h-accordeon__content--active {
+.h-accordeon__item--active .h-accordeon__content {
     width: calc(100vw/2);
-    display: block;
 }
 
+.h-accordeon__item--active .h-accordeon__content-text {
+    animation: text-appear .8s linear forwards;
+}
+
+@keyframes text-appear  {
+    75% {opacity: 0};
+    to {opacity: 1};
+}
 
 .h-accordeon__trigger {
     display: block;
@@ -92,7 +103,7 @@
     }
 
     @include phones {
-        width: rem(70px);
+        width: 2.75rem;
     }
 }
 

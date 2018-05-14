@@ -36,3 +36,32 @@ hamburgerIcon.addEventListener ("click", function(e) {
     });
 
 });
+
+//Горизонтальный аккордеон
+
+const hAcco = document.querySelector('.menu');
+const hAccoItem = document.querySelectorAll('.h-accordeon__item');
+
+hAcco.addEventListener('click', function(e){
+    for (let i = 0; i < hAccoItem.length; i++) {
+        hAccoItem[i].classList.remove('h-accordeon__item--active');
+    }
+});
+
+for (let i = 0; i < hAccoItem.length; i++) {
+    hAccoItem[i].addEventListener('click', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        if (hAccoItem[i].classList.contains('h-accordeon__item--active')) {
+            hAccoItem[i].classList.remove('h-accordeon__item--active');
+            
+        }
+        else {
+            for (let i = 0; i < hAccoItem.length; i++) {
+                hAccoItem[i].classList.remove('h-accordeon__item--active');
+            }
+            hAccoItem[i].classList.add('h-accordeon__item--active');
+        }
+    })
+}
