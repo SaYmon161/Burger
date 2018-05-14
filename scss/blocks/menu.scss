@@ -49,10 +49,15 @@
     padding-top: rem(60px);
     padding-left: rem(32px);
     line-height: 1.72;
+
+    @include phones {
+        font-size: rem(12px);
+        padding-left: rem(10px);
+    }
 }
 
 .h-accordeon__content--active {
-    width: rem(540px);
+    width: calc(100vw/2);
     display: block;
 }
 

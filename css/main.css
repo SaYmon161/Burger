@@ -606,9 +606,13 @@ table {
   padding-top: 3.75rem;
   padding-left: 2rem;
   line-height: 1.72; }
+  @media screen and (max-width: 480px) {
+    .h-accordeon__content-text {
+      font-size: 0.75rem;
+      padding-left: 0.625rem; } }
 
 .h-accordeon__content--active {
-  width: 33.75rem;
+  width: calc(100vw/2);
   display: block; }
 
 .h-accordeon__trigger {
