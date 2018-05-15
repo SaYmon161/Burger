@@ -65,3 +65,32 @@ for (let i = 0; i < hAccoItem.length; i++) {
         }
     })
 }
+
+//Вертикальный аккордеон
+
+const vAcco = document.querySelector('.team');
+const vAccoItem = document.querySelectorAll('.v-accordeon__item');
+
+vAcco.addEventListener('click', function(e){
+    for (let i = 0; i < vAccoItem.length; i++) {
+        vAccoItem[i].classList.remove('v-accordeon__item--active');
+    }
+});
+
+for (let i = 0; i < vAccoItem.length; i++) {
+    vAccoItem[i].addEventListener('click', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        if (vAccoItem[i].classList.contains('v-accordeon__item--active')) {
+            vAccoItem[i].classList.remove('v-accordeon__item--active');
+            
+        }
+        else {
+            for (let i = 0; i < vAccoItem.length; i++) {
+                vAccoItem[i].classList.remove('v-accordeon__item--active');
+            }
+            vAccoItem[i].classList.add('v-accordeon__item--active');
+        }
+    })
+}

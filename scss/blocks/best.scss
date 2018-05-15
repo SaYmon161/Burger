@@ -42,7 +42,6 @@
 
 .best__item div {
     text-align: center;
-    height: rem(120px);
 
     @include phones {
         text-align: left;
@@ -54,8 +53,8 @@
 }
 
 .best__item svg {
-    width: 97px;
-    height: 89px;
+    width: rem(97px);
+    height: rem(89px);
 }
 
 .best__item h3 {
@@ -66,7 +65,6 @@
 
     @include phones {
         margin-bottom: rem(10px);
-        white-space: nowrap;    
     }
 }
 

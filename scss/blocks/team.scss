@@ -22,10 +22,15 @@
 .team__content {
 	width: 70%;
 	padding-left: rem(10px);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 80%;
 
 	@include tablets {
 		text-align: center;
 		align-items: center;
+		height: auto;
 	}
 
 	@include phones {
@@ -64,6 +69,8 @@
 	overflow: hidden;
 	justify-content: space-around;
 	height: 0;
+	opacity: 0;
+	transition: height .5s;
 
 	@include tablets {
 		flex-direction: column;
@@ -80,15 +87,21 @@
 		&:before {
 			content: '';
 			display: inline-block;
-			@include arrow (6px, $yellow, 'up');
+			@include arrow (6px, $yellow, 'down');
 			margin-right: rem(5px);
+			transform: rotate(180deg);
 		}
 	}
 	.v-accordeon__content {
-		min-height: rem(125px);
-		height: auto;
+		// min-height: rem(125px);
+		height: 30vh;
+		animation: acco-content .3s linear forwards;
 	}
+}
 
+@keyframes acco-content  {
+    75% {opacity: 0};
+    to {opacity: 1};
 }
 
 .v-accordeon__name {
@@ -103,6 +116,7 @@
 		display: block;
 		@include arrow (6px, white, 'down');
 		margin-right: rem(5px);
+		transition: transform .5s;
 	}
 
 	@include tablets {
