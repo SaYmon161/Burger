@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'lifehack';
   src: url("../fonts/lifehack_medium-webfont.woff2") format("woff2"), url("../fonts/lifehack_medium-webfont.woff") format("woff");
@@ -368,7 +369,7 @@ table {
       -ms-flex-direction: row;
       flex-direction: row;
       width: 100%;
-      margin-bottom: 2.8125rem; } }
+      margin-boёttom: 2.8125rem; } }
 
 .best__item div {
   text-align: center; }
@@ -507,7 +508,7 @@ table {
     transform: rotate(180deg); }
 
 .v-accordeon__item--active .v-accordeon__content {
-  height: 30vh;
+  height: 20vh;
   -webkit-animation: acco-content .3s linear forwards;
   animation: acco-content .3s linear forwards; }
 
