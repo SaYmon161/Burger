@@ -755,7 +755,7 @@ table {
     -webkit-transition: 0.3;
     -o-transition: 0.3;
     transition: 0.3; }
-  .feedback__item:hover .feedback__content {
+  .feedback__item:hover .feedback__container {
     opacity: 1; }
   .feedback__item:hover:after {
     opacity: 0.6; }
@@ -764,14 +764,14 @@ table {
       width: 50%;
       height: 25%; } }
 
-.feedback__content {
+.feedback__container {
   position: absolute;
   top: 14%;
   left: 7%;
   opacity: 0;
   z-index: 10; }
   @media screen and (max-width: 768px) {
-    .feedback__content {
+    .feedback__container {
       text-align: center;
       left: 14%;
       width: 75%;
@@ -1509,3 +1509,64 @@ table {
   @media screen and (max-width: 480px) {
     .price__number {
       font-size: 3.125rem; } }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(47, 50, 52, 0.93);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.overlay__content {
+  width: 460px;
+  height: 255px;
+  display: block;
+  background-color: #fff;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-top: 28px;
+  padding-right: 23px; }
+
+.overlay__name {
+  font-family: 'gagalin';
+  font-size: 14px;
+  margin-bottom: 25px; }
+
+.overlay__text {
+  font-weight: 300;
+  font-size: 14px; }
+
+.overlay__close:before, .overlay__close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 29px;
+  width: 4px;
+  display: block;
+  background-color: #ec8468; }
+
+.overlay__close {
+  position: absolute;
+  top: 7%;
+  right: 10%;
+  cursor: pointer; }
+  .overlay__close:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .overlay__close:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }

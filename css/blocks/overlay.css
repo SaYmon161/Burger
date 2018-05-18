@@ -1,0 +1,30 @@
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(47, 50, 52, 0.93);
+  position: absolute;
+  top: 0;
+  bottom: 0; }
+
+.overlay__content {
+  width: 460px;
+  height: 255px;
+  display: block;
+  border-color: #fff; }
+
+.overlay__close {
+  position: absolute;
+  top: 2.5%;
+  right: 8%;
+  cursor: pointer; }
+  .overlay__close:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .overlay__close:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }

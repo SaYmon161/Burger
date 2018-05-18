@@ -96,3 +96,56 @@ for (let i = 0; i < vAccoItem.length; i++) {
 }
 
 //Feedback overlay
+
+const feedbackItem = document.querySelectorAll('.feedback__item');
+
+let template = document.createElement('div');
+
+template.innerHTML = document.querySelector('#overlayTemplate').innerHTML;
+const overlay = createOverlay(template);
+
+for (let i = 0; i < feedbackItem.length; i++) {
+    let openButton = feedbackItem[i].querySelector('.feedback__btn');
+    let feedbackContent = feedbackItem[i].querySelector('.feedback__content');
+
+    openButton.addEventListener('click', function(e) {
+        e.preventDefault;
+        overlay.open();
+        overlay.setContent(feedbackContent);
+    });
+};
+
+function createOverlay(template) {
+    let fragment = template;
+
+    const overlayElement = fragment.querySelector('.overlay');
+    const overlayContent = fragment.querySelector('.overlay__content');
+    const overlayClose = fragment.querySelector('.overlay__close');
+    let overlayName = overlayContent.querySelector('.overlay__name');
+    let overlayText = overlayContent.querySelector('.overlay__text');
+
+    overlayElement.addEventListener('click', function(e) {
+        if (e.target === overlayElement) {
+            overlayClose.click();
+        }
+    });
+    overlayClose.addEventListener('click', function() {
+        document.body.removeChild(overlayElement);
+    });
+
+    return {
+        open() {
+            document.body.appendChild(overlayElement);
+        },
+
+        close() {
+            overlayClose.click();
+        },
+
+        setContent(content) {
+            overlayName.innerHTML = content.querySelector('.feedback__subtitle').innerHTML;
+            overlayText.innerHTML = content.querySelector('.feedback__text').innerHTML;
+            
+        }
+    };
+};
