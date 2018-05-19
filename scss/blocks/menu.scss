@@ -33,6 +33,7 @@
 .h-accordeon__item {
     display: flex;
     height: 100%;
+    transition: right .3s;
 }
 
 .h-accordeon__content {

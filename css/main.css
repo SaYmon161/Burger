@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'lifehack';
   src: url("../fonts/lifehack_medium-webfont.woff2") format("woff2"), url("../fonts/lifehack_medium-webfont.woff") format("woff");
@@ -329,6 +328,10 @@ table {
       padding-left: 1.5625rem;
       margin-bottom: 1.25rem; } }
 
+@media screen and (max-width: 768px) {
+  .best__content {
+    height: 45%; } }
+
 .best__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -369,7 +372,7 @@ table {
       -ms-flex-direction: row;
       flex-direction: row;
       width: 100%;
-      margin-boёttom: 2.8125rem; } }
+      margin-bottom: 2.8125rem; } }
 
 .best__item div {
   text-align: center; }
@@ -382,7 +385,8 @@ table {
 
 .best__item svg {
   width: 6.0625rem;
-  height: 5.5625rem; }
+  height: 5.5625rem;
+  margin-bottom: 1.0625rem; }
 
 .best__item h3 {
   font-family: "lifehack";
@@ -627,7 +631,10 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%; }
+  height: 100%;
+  -webkit-transition: right .3s;
+  -o-transition: right .3s;
+  transition: right .3s; }
 
 .h-accordeon__content {
   width: 0;
@@ -1233,10 +1240,22 @@ table {
   @media screen and (max-width: 480px) {
     .container--burgers {
       margin: 0 0;
-      width: 100%; } }
+      width: 100%;
+      position: relative; } }
 
 .left-block {
   padding-left: 10px; }
+  @media screen and (max-width: 480px) {
+    .left-block {
+      position: absolute;
+      top: 50%;
+      left: 0%; } }
+
+@media screen and (max-width: 480px) {
+  .right-block {
+    position: absolute;
+    top: 50%;
+    right: 0%; } }
 
 .arrow-right__pic {
   fill: white;
@@ -1256,8 +1275,15 @@ table {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
+.slider__container {
+  overflow: hidden;
+  height: 90%; }
+  @media screen and (max-width: 768px) {
+    .slider__container {
+      width: 100%; } }
+
 .slider {
-  height: 90%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1266,27 +1292,39 @@ table {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
   @media screen and (max-width: 768px) {
     .slider {
       width: 89%; } }
 
 .slider__list {
-  height: 100%; }
+  height: 100%;
+  width: 100%;
+  padding-top: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: right .3s;
+  -o-transition: right .3s;
+  transition: right .3s; }
   @media screen and (max-width: 768px) {
     .slider__list {
       height: 100%; } }
 
 .slider__item {
   height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-top: 1%;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%; }
   @media screen and (max-width: 768px) {
     .slider__item {
       -webkit-box-orient: vertical;
@@ -1295,11 +1333,7 @@ table {
       flex-direction: column;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
-      justify-content: center;
-      padding-top: 10%; } }
-  @media screen and (max-width: 480px) {
-    .slider__item {
-      padding-top: 25%; } }
+      justify-content: center; } }
 
 .ingredients {
   position: absolute;
@@ -1312,11 +1346,11 @@ table {
     background: #e35028; }
   @media screen and (max-width: 768px) {
     .ingredients {
-      left: 13%;
-      top: 7%; } }
+      left: 14%;
+      top: 3%; } }
   @media screen and (max-width: 480px) {
     .ingredients {
-      left: -7%;
+      left: 2%;
       top: 2%; } }
 
 .ingredients__pic-wrap {
@@ -1395,12 +1429,12 @@ table {
     .kkal {
       bottom: unset;
       left: unset;
-      top: 8%;
-      right: 13%; } }
+      top: 4%;
+      right: 14%; } }
   @media screen and (max-width: 480px) {
     .kkal {
-      top: 2%;
-      right: -6%; } }
+      top: 4%;
+      right: 2%; } }
 
 .kkal__pic {
   fill: white; }
@@ -1487,7 +1521,7 @@ table {
       width: 54%; } }
   @media screen and (max-width: 480px) {
     .slider__order {
-      width: 73%;
+      width: 85%;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; } }
@@ -1496,7 +1530,8 @@ table {
   font-family: 'gagalin';
   font-size: 1.875rem;
   color: #e25028;
-  margin-right: 3.5%; }
+  margin-right: 3.5%;
+  line-height: 1; }
   @media screen and (max-width: 480px) {
     .price {
       font-size: 1.5rem; } }
@@ -1511,13 +1546,11 @@ table {
       font-size: 3.125rem; } }
 
 .overlay {
-  height: 100%;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: rgba(47, 50, 52, 0.93);
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1529,7 +1562,7 @@ table {
   -ms-flex-pack: center;
   justify-content: center; }
 
-.overlay__content {
+.overlay__container {
   width: 460px;
   height: 255px;
   display: block;
@@ -1537,7 +1570,8 @@ table {
   border-radius: 5px;
   padding-left: 15px;
   padding-top: 28px;
-  padding-right: 23px; }
+  padding-right: 23px;
+  position: relative; }
 
 .overlay__name {
   font-family: 'gagalin';

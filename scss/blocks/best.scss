@@ -7,11 +7,18 @@
 .title--best {
     text-align: center;
     margin-bottom: rem(30px);
+    
 
     @include phones {
         font-size: rem(50px);
         padding-left: rem(25px);
         margin-bottom: rem(20px);
+    }
+}
+
+.best__content {
+    @include tablets {
+       height: 45%;
     }
 }
 
@@ -36,7 +43,7 @@
     @include phones {
         flex-direction: row;
         width: 100%;
-        margin-boёttom: rem(45px);
+        margin-bottom: rem(45px);
     }
 }
 
@@ -55,6 +62,7 @@
 .best__item svg {
     width: rem(97px);
     height: rem(89px);
+    margin-bottom: rem(17px);
 }
 
 .best__item h3 {
