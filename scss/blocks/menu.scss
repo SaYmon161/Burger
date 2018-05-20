@@ -27,7 +27,6 @@
     right: 0%;
     bottom: 0%;
     display: flex;
-    background-color: rgba(47, 50, 52, .93);
 }
 
 .h-accordeon__item {
@@ -35,13 +34,14 @@
     height: 100%;
     right: 0;
     transition: .2s right;
+    background-color: rgba(47, 50, 52, .93);
 }
 
 .h-accordeon__content {
     width: 0;
     overflow: hidden;
     height: 100%;
-    transition: .6s width;
+    transition: .6s all;
 }
 
 .h-accordeon__content-text {
@@ -89,14 +89,17 @@
 
 }
 
+.h-accordeon__item--active {
+    @include phones {
+        position: absolute;
+        right: 0;
+        z-index: 20;
+    }
+}
+
 .h-accordeon__item--active .h-accordeon__content {
     width: 50vw;
 
-    // @include phones {
-    //     position: absolute;
-    //     right: 0;
-    //     z-index: 20;
-    // }
 }
 
 .h-accordeon__item--active .h-accordeon__content-text {

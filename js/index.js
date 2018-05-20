@@ -1,3 +1,5 @@
+// var screenWidth = document.documentElement.clientWidth;
+
 // Полноэкранное меню
 
 const hamburgerIcon = document.querySelector('.hamburger-menu-link');
@@ -37,12 +39,13 @@ hamburgerLogo.addEventListener('click', function() {
 
 const hAcco = document.querySelector('.menu');
 const hAccoItem = document.querySelectorAll('.h-accordeon__item');
-var screenWidth = window.innerWidth;
 const trigger = document.querySelector('.h-accordeon__trigger')
 const triggerWidth = parseInt(getComputedStyle(trigger).width);
 const hAccoContent = document.querySelectorAll('.h-accordeon__content')
 
 function adaptHAccoContent (n, opened) {
+    let screenWidth = document.documentElement.clientWidth;
+    
     if (screenWidth <= 768 && screenWidth > 480) {
         if (!opened) {
             hAccoContent[n].style.width = screenWidth - triggerWidth * hAccoItem.length + 'px';
@@ -52,23 +55,8 @@ function adaptHAccoContent (n, opened) {
     } else if (screenWidth <= 480) {
         if (!opened) {
             hAccoContent[n].style.width = screenWidth - triggerWidth + 'px';
-            for (let i = 0; i < hAccoContent.length; i++) {
-                if (i != n) {
-                    //hAccoItem[i].style.right = i * triggerWidth + 'px';
-                    hAccoItem[i].style.position = 'absolute';
-                    hAccoItem[i].style.right = - triggerWidth + 'px';
-                };
-            };
         } else {
             hAccoContent[n].style.width = '';
-            for (let i = 0; i < hAccoContent.length; i++) {
-                if (i != n) {
-                    //hAccoItem[i].style.display = '';
-                    hAccoItem[i].style.right = 0;
-                    hAccoItem[i].style.position = '';
-                    hAccoItem[i].style.right = '';
-                };
-            };
         };
     };
 };
@@ -218,3 +206,30 @@ right.addEventListener('click', e => {
         sliderList.style.right = currentRight + '%';
     }
 })
+
+//Ховер "Состав"
+const dropdown = document.querySelector('.ingredients__dropdown')
+const closeDropdown = document.querySelector('.close-dropdown');
+const ingredientsPicWrap = document.querySelector('.ingredients__pic-wrap')
+let screenWidth = document.documentElement.clientWidth;
+
+if (screenWidth <= 768) {
+    dropdown.style.width = screenWidth * 0.42 + 'px';
+}
+
+ingredientsPicWrap.addEventListener('click', () => {
+    dropdown.style.opacity = '1';
+    dropdown.style.zIndex = '10';
+    ingredientsPicWrap.style.backgroundColor = '#e35028';
+})
+
+closeDropdown.addEventListener('click', () => {
+    dropdown.style.opacity = '';
+    dropdown.style.zIndex = '';
+    ingredientsPicWrap.style.backgroundColor = '';
+})
+
+
+
+
+
