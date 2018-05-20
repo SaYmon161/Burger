@@ -12,13 +12,17 @@
     @include phones {
         font-size: rem(50px);
         padding-left: rem(25px);
-        margin-bottom: rem(20px);
+        margin-bottom: 0;
     }
 }
 
 .best__content {
     @include tablets {
        height: 45%;
+    }
+
+    @include phones {
+        height: auto;
     }
 }
 
@@ -43,7 +47,7 @@
     @include phones {
         flex-direction: row;
         width: 100%;
-        margin-bottom: rem(45px);
+        margin-bottom: 0;
     }
 }
 
@@ -72,7 +76,7 @@
     margin-bottom: rem(13px);
 
     @include phones {
-        margin-bottom: rem(10px);
+        margin-bottom: 0%;
     }
 }
 

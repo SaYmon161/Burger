@@ -68,6 +68,7 @@
 	display: flex;
 	overflow: hidden;
 	justify-content: space-around;
+	align-items: center;
 	height: 0;
 	opacity: 0;
 	transition: height .5s;
@@ -94,8 +95,12 @@
 	}
 	.v-accordeon__content {
 		// min-height: rem(125px);
-		height: 20vh;
+		height: rem(145px);
 		animation: acco-content .3s linear forwards;
+
+		@include tablets {
+		height: rem(230px);			
+		}
 	}
 }
 

@@ -44,6 +44,11 @@
     @include tablets {
         width: 100%;;
     }
+    
+    @include phones {
+        width: 80%;;
+    }
+
 }
 
 .hello-block__picture {
@@ -64,6 +69,10 @@
 
 .title--slogan {
     color: $yellow;
+
+    @include phones {
+        line-height: 1;
+    }
 }
 
 .slogan__text {
@@ -79,7 +88,7 @@
 
 .forward-arrow {
     position: absolute;
-    bottom: 9%;
+    bottom: 5%;
     left: 49.5%;
     cursor: pointer;
 }

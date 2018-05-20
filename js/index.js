@@ -1,47 +1,43 @@
 // Полноэкранное меню
 
 const hamburgerIcon = document.querySelector('.hamburger-menu-link');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const hamburgerMenuItem = document.querySelectorAll('#nav__item');
+const hamburgerCloseIcon = document.querySelector('.close');
+const hamburgerLogo = document.querySelector('#logo__link');
 
 hamburgerIcon.addEventListener ("click", function(e) {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-
-    e.preventDefault;
+    e.preventDefault();
     hamburgerMenu.style.display = 'block';
     hamburgerIcon.style.display = 'none';
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; 
+});
 
-    const hamburgerMenuItem = document.querySelectorAll('#nav__item');
-
-    for (let i = 0; i < hamburgerMenuItem.length; i++) {
-        hamburgerMenuItem[i].addEventListener ('click', function() {
-            hamburgerMenu.style.display = '';
-            hamburgerIcon.style.display = '';
-            document.body.style.overflow = '';
-        });
-    };
-
-    const hamburgerCloseIcon = document.querySelector('.close');
-
-    hamburgerCloseIcon.addEventListener('click', function(){
+for (let i = 0; i < hamburgerMenuItem.length; i++) {
+    hamburgerMenuItem[i].addEventListener ('click', function() {
         hamburgerMenu.style.display = '';
         hamburgerIcon.style.display = '';
         document.body.style.overflow = '';
     });
+};
 
-    const hamburgerLogo = document.querySelector('#logo__link');
-    hamburgerLogo.addEventListener('click', function(){
-        hamburgerMenu.style.display = '';
-        hamburgerIcon.style.display = '';
-        document.body.style.overflow = '';
-    });
+hamburgerCloseIcon.addEventListener('click', function() {
+    hamburgerMenu.style.display = '';
+    hamburgerIcon.style.display = '';
+    document.body.style.overflow = '';
+});
 
+hamburgerLogo.addEventListener('click', function() {
+    hamburgerMenu.style.display = '';
+    hamburgerIcon.style.display = '';
+    document.body.style.overflow = '';
 });
 
 //Горизонтальный аккордеон
 
 const hAcco = document.querySelector('.menu');
 const hAccoItem = document.querySelectorAll('.h-accordeon__item');
-const screenWidth = window.innerWidth;
+var screenWidth = window.innerWidth;
 const trigger = document.querySelector('.h-accordeon__trigger')
 const triggerWidth = parseInt(getComputedStyle(trigger).width);
 const hAccoContent = document.querySelectorAll('.h-accordeon__content')
@@ -58,14 +54,19 @@ function adaptHAccoContent (n, opened) {
             hAccoContent[n].style.width = screenWidth - triggerWidth + 'px';
             for (let i = 0; i < hAccoContent.length; i++) {
                 if (i != n) {
-                    hAccoItem[i].style.display = 'none';
+                    //hAccoItem[i].style.right = i * triggerWidth + 'px';
+                    hAccoItem[i].style.position = 'absolute';
+                    hAccoItem[i].style.right = - triggerWidth + 'px';
                 };
             };
         } else {
             hAccoContent[n].style.width = '';
             for (let i = 0; i < hAccoContent.length; i++) {
                 if (i != n) {
-                    hAccoItem[i].style.display = '';
+                    //hAccoItem[i].style.display = '';
+                    hAccoItem[i].style.right = 0;
+                    hAccoItem[i].style.position = '';
+                    hAccoItem[i].style.right = '';
                 };
             };
         };
