@@ -230,6 +230,54 @@ closeDropdown.addEventListener('click', () => {
 })
 
 
+//One Page Scroll
+const mainContent = document.querySelector('.main-content');
+const sectionArray = document.querySelectorAll('section');
+const forward = document.querySelector('.forward-arrow');
 
+const scrollStep = 100;
+const minTop = 0;
+const maxTop = - scrollStep * (sectionArray.length - 1);
+let currentTop = 0;
 
+mainContent.style.top = currentTop + '%';
 
+function scrollDown() {
+    if (currentTop > maxTop) {
+        currentTop -= scrollStep;
+        mainContent.style.top = currentTop + '%';
+        console.log(currentTop);
+    }
+}
+
+function scrollUp() {
+    if (currentTop < minTop) {
+        currentTop += scrollStep;
+        mainContent.style.top = currentTop + '%';
+        console.log(currentTop);
+    }
+}
+
+forward.addEventListener('click', () => {
+    scrollDown();
+})
+
+document.addEventListener('keyup', e => {
+    if (e.keyCode === 40) { //стрелка вниз
+        scrollDown();
+    } else if (e.keyCode === 38) {  //стрелка вверх
+        scrollUp();
+    } else if (e.keyCode === 33) { //Page Up
+        scrollUp();
+    } else if (e.keyCode === 34) { //Page Down
+        scrollDown();        
+    }
+})
+
+document.addEventListener('wheel', (e) => {
+    if (e.wheelDelta > 0) {
+        scrollUp();
+    } else if (e.wheelDelta < 0) {
+        scrollDown();
+    }
+})

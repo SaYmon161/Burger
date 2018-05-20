@@ -82,6 +82,15 @@ table {
   position: relative;
   overflow: hidden; }
 
+.main-content {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  -webkit-transition: .3s top;
+  -o-transition: .3s top;
+  transition: .3s top; }
+
 .container {
   margin: 0 auto;
   max-width: 940px;

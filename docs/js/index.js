@@ -1,52 +1,51 @@
+// var screenWidth = document.documentElement.clientWidth;
+
 // Полноэкранное меню
 
 const hamburgerIcon = document.querySelector('.hamburger-menu-link');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const hamburgerMenuItem = document.querySelectorAll('#nav__item');
+const hamburgerCloseIcon = document.querySelector('.close');
+const hamburgerLogo = document.querySelector('#logo__link');
 
 hamburgerIcon.addEventListener ("click", function(e) {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-
-    e.preventDefault;
+    e.preventDefault();
     hamburgerMenu.style.display = 'block';
     hamburgerIcon.style.display = 'none';
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; 
+});
 
-    const hamburgerMenuItem = document.querySelectorAll('#nav__item');
-
-    for (let i = 0; i < hamburgerMenuItem.length; i++) {
-        hamburgerMenuItem[i].addEventListener ('click', function() {
-            hamburgerMenu.style.display = '';
-            hamburgerIcon.style.display = '';
-            document.body.style.overflow = '';
-        });
-    };
-
-    const hamburgerCloseIcon = document.querySelector('.close');
-
-    hamburgerCloseIcon.addEventListener('click', function(){
+for (let i = 0; i < hamburgerMenuItem.length; i++) {
+    hamburgerMenuItem[i].addEventListener ('click', function() {
         hamburgerMenu.style.display = '';
         hamburgerIcon.style.display = '';
         document.body.style.overflow = '';
     });
+};
 
-    const hamburgerLogo = document.querySelector('#logo__link');
-    hamburgerLogo.addEventListener('click', function(){
-        hamburgerMenu.style.display = '';
-        hamburgerIcon.style.display = '';
-        document.body.style.overflow = '';
-    });
+hamburgerCloseIcon.addEventListener('click', function() {
+    hamburgerMenu.style.display = '';
+    hamburgerIcon.style.display = '';
+    document.body.style.overflow = '';
+});
 
+hamburgerLogo.addEventListener('click', function() {
+    hamburgerMenu.style.display = '';
+    hamburgerIcon.style.display = '';
+    document.body.style.overflow = '';
 });
 
 //Горизонтальный аккордеон
 
 const hAcco = document.querySelector('.menu');
 const hAccoItem = document.querySelectorAll('.h-accordeon__item');
-const screenWidth = window.innerWidth;
 const trigger = document.querySelector('.h-accordeon__trigger')
 const triggerWidth = parseInt(getComputedStyle(trigger).width);
 const hAccoContent = document.querySelectorAll('.h-accordeon__content')
 
 function adaptHAccoContent (n, opened) {
+    let screenWidth = document.documentElement.clientWidth;
+    
     if (screenWidth <= 768 && screenWidth > 480) {
         if (!opened) {
             hAccoContent[n].style.width = screenWidth - triggerWidth * hAccoItem.length + 'px';
@@ -56,18 +55,8 @@ function adaptHAccoContent (n, opened) {
     } else if (screenWidth <= 480) {
         if (!opened) {
             hAccoContent[n].style.width = screenWidth - triggerWidth + 'px';
-            for (let i = 0; i < hAccoContent.length; i++) {
-                if (i != n) {
-                    hAccoItem[i].style.display = 'none';
-                };
-            };
         } else {
             hAccoContent[n].style.width = '';
-            for (let i = 0; i < hAccoContent.length; i++) {
-                if (i != n) {
-                    hAccoItem[i].style.display = '';
-                };
-            };
         };
     };
 };
@@ -217,3 +206,30 @@ right.addEventListener('click', e => {
         sliderList.style.right = currentRight + '%';
     }
 })
+
+//Ховер "Состав"
+const dropdown = document.querySelector('.ingredients__dropdown')
+const closeDropdown = document.querySelector('.close-dropdown');
+const ingredientsPicWrap = document.querySelector('.ingredients__pic-wrap')
+let screenWidth = document.documentElement.clientWidth;
+
+if (screenWidth <= 768) {
+    dropdown.style.width = screenWidth * 0.42 + 'px';
+}
+
+ingredientsPicWrap.addEventListener('click', () => {
+    dropdown.style.opacity = '1';
+    dropdown.style.zIndex = '10';
+    ingredientsPicWrap.style.backgroundColor = '#e35028';
+})
+
+closeDropdown.addEventListener('click', () => {
+    dropdown.style.opacity = '';
+    dropdown.style.zIndex = '';
+    ingredientsPicWrap.style.backgroundColor = '';
+})
+
+
+
+
+
