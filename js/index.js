@@ -246,7 +246,7 @@ function scrollDown() {
     if (currentTop > maxTop) {
         currentTop -= scrollStep;
         mainContent.style.top = currentTop + '%';
-        console.log(currentTop);
+        asidePaginationActive();
     }
 }
 
@@ -254,8 +254,17 @@ function scrollUp() {
     if (currentTop < minTop) {
         currentTop += scrollStep;
         mainContent.style.top = currentTop + '%';
-        console.log(currentTop);
+        asidePaginationActive();        
     }
+}
+
+function asidePaginationActive() {
+    const paginationLink = document.querySelectorAll('.pagination__link');
+    for (let i = 0; i < paginationLink.length; i++) {
+        paginationLink[i].classList.remove('pagination__link--active')
+    }
+    let linkNum = - currentTop / 100;
+    paginationLink[linkNum].classList.add('pagination__link--active');
 }
 
 forward.addEventListener('click', () => {
