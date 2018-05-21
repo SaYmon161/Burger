@@ -24,7 +24,11 @@
         content: '';
         @include circle(8px, #fff);
     }
-    &:hover:after {
+    
+}
+
+.pagination__link--active {
+    &:after {
         content: '';
         display: block;
         position: absolute;

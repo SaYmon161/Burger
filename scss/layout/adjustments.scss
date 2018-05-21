@@ -1,9 +1,16 @@
 .wrapper {
     width: 100%;
-    // min-width: 960px;
     min-height: 100%;
     position: relative;
     overflow: hidden;
+}
+
+.main-content {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    transition: .3s top;
 }
 
 .container {

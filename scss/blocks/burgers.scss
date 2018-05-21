@@ -9,7 +9,7 @@
     align-items: center;
     max-width: rem(1040px);
     margin: 0 auto;
-    
+        
     @include tablets {
         justify-content: center;
         margin: 0 2%;
@@ -18,11 +18,28 @@
     @include phones {
         margin: 0 0;
         width: 100%;
+        position: relative;
     }
 }
 
 .left-block {
     padding-left: 10px;
+
+    @include phones {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        z-index: 100;
+    }
+}
+
+.right-block {
+    @include phones {
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        z-index: 100;
+    }
 }
 
 .arrow-right__pic {
@@ -36,11 +53,22 @@
     transform-origin: center;
     transform: rotate(90deg);
 }
-.slider {
+
+.slider__container {
+    overflow: hidden;
     height: 90%;
+
+    @include tablets {
+        height: 100%;
+    }
+}
+
+.slider {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     @include tablets {
         width: 89%;
@@ -50,6 +78,10 @@
 
 .slider__list {
     height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    transition: right .3s;
 
     @include tablets {
         height: 100%;
@@ -58,19 +90,18 @@
 
 .slider__item {
     height: 100%;
+    width: 100%;
     display: flex;
     position: relative;
-    padding-top: 1%;
     align-items: center;
+    flex-basis: 100%;
 
     @include tablets {
         flex-direction: column;
         justify-content: center;
-        padding-top: 10%;
     }
     
     @include phones {
-        padding-top: 25%;
         
     }
 }
@@ -81,21 +112,25 @@
     left: 0%;
 
     &:hover .ingredients__dropdown {
-        opacity: 1;
-        z-index: 10;
+        @include desktops {
+            opacity: 1;
+            z-index: 10;
+        }
     }
     
     &:hover .ingredients__pic-wrap {
-        background: #e35028;
+        @include desktops {
+            background: #e35028;
+        }
     }
 
     @include tablets {
-        left: 13%;
-        top: 7%;
+        left: 14%;
+        top: 3%;
     }
 
     @include phones {
-        left: -7%;
+        left: 2%;
         top: 2%;
     }
 }
@@ -128,28 +163,76 @@
     border-radius: 5px;
     padding-top: 15%;
     padding-left: 15%;
+    padding-right: 25%;
     opacity: 0;
     transition: .3s opacity;
     position: absolute;
     top: 0;
     left: rem(90px);
     z-index: -100;
+
+    @include tablets {
+        width: 320px;
+    }
 }
 
-.table__pic {
+.close-dropdown:before, .close-dropdown:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 29px;
+    width: 4px;
+    display: block;
+    background-color: #e35028;
+}
+
+.close-dropdown {
+    display: none;
+    position: absolute;
+    top: 3.5%;
+    right: 12%;
+    cursor: pointer;
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+
+    @include tablets {
+        display: block;
+    }
+}
+
+.ingredients__list {
+    width: 95%;
+
+    @include tablets {
+        width: 83%;
+    }
+}
+
+.ingredients__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ingredients__item-pic-wrap {
     width: rem(72px);
     height: rem(50px);
 }
 
-.table__comp {
-    width: rem(124px);
+.ingredients__comp {
     font-size: rem(14px);
     font-weight: 500;
 }
 
-.table__weight {
+.ingredients__weight {
     font-size: rem(14px);
     font-weight: 300;
+    margin-left: auto;
 }
 
 .kkal {
@@ -167,13 +250,13 @@
     @include tablets {
         bottom: unset;
         left: unset;
-        top: 8%;
-        right: 13%;
+        top: 4%;
+        right: 14%;
     }
 
     @include phones {
-        top: 2%;
-        right: -6%;
+        top: 4%;
+        right: 2%;
     }
 }
 
@@ -228,6 +311,7 @@
     color: white;
     line-height: .9;
     margin-bottom: 10%;
+    word-wrap: break-word;
 
     @include tablets {
         width: 84%;
@@ -267,7 +351,7 @@
     }
 
     @include phones {
-        width: 73%;
+        width: 85%;
         align-items: center;
     }
 }
@@ -277,6 +361,7 @@
     font-size: rem(30px);
     color: $orange;
     margin-right: 3.5%;
+    line-height: 1;
 
     @include phones {
         font-size: rem(24px);
