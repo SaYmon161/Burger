@@ -241,7 +241,8 @@ const mainContent = document.querySelector('.main-content');
 const sectionArray = document.querySelectorAll('section');
 const forward = document.querySelector('.forward-arrow');
 const paginationLink = document.querySelectorAll('.pagination__link');
-const navLink = document.querySelectorAll('.nav__link');
+const menuNavLink = document.querySelector('.nav__list--hamburger-menu').querySelectorAll('.nav__link');
+const headerNavLink = document.querySelector('.header__navigation').querySelectorAll('.nav__link');
 const orderBtn = document.querySelectorAll('.order-btn');
 
 
@@ -321,24 +322,28 @@ for (let i = 0; i < paginationLink.length; i++) {
     })
 }
 
-for (let i = 0; i < navLink.length; i++) {
-    navLink[i].addEventListener('click', e => {
+
+//Header меню
+for (let i = 0; i < headerNavLink.length; i++) {
+    headerNavLink[i].addEventListener('click', e => {
         e.preventDefault();
-        console.log(navLink[i].href);
-        
-        // if (navLink[i].href == '#best') {
-        //     moveToPos (- 100);
-        // } else if (navLink[i].href == '#burgers') {
-        //     moveToPos (- 200);
-        // } else if (navLink[i].href == '#team') {
-        //     moveToPos (- 300);
-        // } else if (navLink[i].href == '#menu') {
-        //     moveToPos (- 400);
-        // } else if (navLink[i].href == '#feedback') {
-        //     moveToPos (- 500);
-        // } else if (navLink[i].href == '#map') {
-        //     moveToPos (- 700);
-        // }
+        if (i != 5) {
+            moveToPos(- (i + 1) * 100);
+        } else {
+            moveToPos(- (i + 2) * 100);
+        }
+    })
+}
+
+//Гамбургер меню
+for (let i = 0; i < menuNavLink.length; i++) {
+    menuNavLink[i].addEventListener('click', e => {
+        e.preventDefault();
+        if (i != 5) {
+            moveToPos(- (i + 1) * 100);
+        } else {
+            moveToPos(- (i + 2) * 100);
+        }
     })
 }
 
