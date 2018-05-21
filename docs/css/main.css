@@ -82,6 +82,15 @@ table {
   position: relative;
   overflow: hidden; }
 
+.main-content {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  -webkit-transition: .3s top;
+  -o-transition: .3s top;
+  transition: .3s top; }
+
 .container {
   margin: 0 auto;
   max-width: 940px;
@@ -1177,20 +1186,21 @@ table {
     height: 8px;
     border-radius: 4px;
     background-color: #fff; }
-  .pagination__link:hover:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: 10; }
+
+.pagination__link--active:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 10; }
 
 .hamburger-menu {
   position: fixed;
