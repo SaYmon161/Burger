@@ -1,53 +1,51 @@
+// var screenWidth = document.documentElement.clientWidth;
 
 // Полноэкранное меню
 
 const hamburgerIcon = document.querySelector('.hamburger-menu-link');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const hamburgerMenuItem = document.querySelectorAll('#nav__item');
+const hamburgerCloseIcon = document.querySelector('.close');
+const hamburgerLogo = document.querySelector('#logo__link');
 
 hamburgerIcon.addEventListener ("click", function(e) {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-
-    e.preventDefault;
+    e.preventDefault();
     hamburgerMenu.style.display = 'block';
     hamburgerIcon.style.display = 'none';
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; 
+});
 
-    const hamburgerMenuItem = document.querySelectorAll('#nav__item');
-
-    for (let i = 0; i < hamburgerMenuItem.length; i++) {
-        hamburgerMenuItem[i].addEventListener ('click', function() {
-            hamburgerMenu.style.display = '';
-            hamburgerIcon.style.display = '';
-            document.body.style.overflow = '';
-        });
-    };
-
-    const hamburgerCloseIcon = document.querySelector('.close');
-
-    hamburgerCloseIcon.addEventListener('click', function(){
+for (let i = 0; i < hamburgerMenuItem.length; i++) {
+    hamburgerMenuItem[i].addEventListener ('click', function() {
         hamburgerMenu.style.display = '';
         hamburgerIcon.style.display = '';
         document.body.style.overflow = '';
     });
+};
 
-    const hamburgerLogo = document.querySelector('#logo__link');
-    hamburgerLogo.addEventListener('click', function(){
-        hamburgerMenu.style.display = '';
-        hamburgerIcon.style.display = '';
-        document.body.style.overflow = '';
-    });
+hamburgerCloseIcon.addEventListener('click', function() {
+    hamburgerMenu.style.display = '';
+    hamburgerIcon.style.display = '';
+    document.body.style.overflow = '';
+});
 
+hamburgerLogo.addEventListener('click', function() {
+    hamburgerMenu.style.display = '';
+    hamburgerIcon.style.display = '';
+    document.body.style.overflow = '';
 });
 
 //Горизонтальный аккордеон
 
 const hAcco = document.querySelector('.menu');
 const hAccoItem = document.querySelectorAll('.h-accordeon__item');
-const screenWidth = window.innerWidth;
 const trigger = document.querySelector('.h-accordeon__trigger')
 const triggerWidth = parseInt(getComputedStyle(trigger).width);
 const hAccoContent = document.querySelectorAll('.h-accordeon__content')
 
 function adaptHAccoContent (n, opened) {
+    let screenWidth = document.documentElement.clientWidth;
+    
     if (screenWidth <= 768 && screenWidth > 480) {
         if (!opened) {
             hAccoContent[n].style.width = screenWidth - triggerWidth * hAccoItem.length + 'px';
@@ -57,18 +55,8 @@ function adaptHAccoContent (n, opened) {
     } else if (screenWidth <= 480) {
         if (!opened) {
             hAccoContent[n].style.width = screenWidth - triggerWidth + 'px';
-            for (let i = 0; i < hAccoContent.length; i++) {
-                if (i != n) {
-                    hAccoItem[i].style.display = 'none';
-                };
-            };
         } else {
             hAccoContent[n].style.width = '';
-            for (let i = 0; i < hAccoContent.length; i++) {
-                if (i != n) {
-                    hAccoItem[i].style.display = '';
-                };
-            };
         };
     };
 };
@@ -208,6 +196,9 @@ left.addEventListener('click', e => {
     if (currentRight > minRight) {
         currentRight -= step;
         sliderList.style.right = currentRight + '%';
+    } else {
+        currentRight = maxRight;
+        sliderList.style.right = currentRight + '%'
     };
 });
 
@@ -216,5 +207,159 @@ right.addEventListener('click', e => {
     if (currentRight < maxRight) {
         currentRight += step;
         sliderList.style.right = currentRight + '%';
+    } else {
+        currentRight = minRight;
+        sliderList.style.right = currentRight + '%'
     }
+})
+
+//Ховер "Состав"
+const dropdown = document.querySelector('.ingredients__dropdown')
+const closeDropdown = document.querySelector('.close-dropdown');
+const ingredientsPicWrap = document.querySelector('.ingredients__pic-wrap')
+let screenWidth = document.documentElement.clientWidth;
+
+if (screenWidth <= 768) {
+    dropdown.style.width = screenWidth * 0.42 + 'px';
+}
+
+ingredientsPicWrap.addEventListener('click', () => {
+    dropdown.style.opacity = '1';
+    dropdown.style.zIndex = '10';
+    ingredientsPicWrap.style.backgroundColor = '#e35028';
+})
+
+closeDropdown.addEventListener('click', () => {
+    dropdown.style.opacity = '';
+    dropdown.style.zIndex = '';
+    ingredientsPicWrap.style.backgroundColor = '';
+})
+
+
+//One Page Scroll
+const mainContent = document.querySelector('.main-content');
+const sectionArray = document.querySelectorAll('section');
+const forward = document.querySelector('.forward-arrow');
+const paginationLink = document.querySelectorAll('.pagination__link');
+const menuNavLink = document.querySelector('.nav__list--hamburger-menu').querySelectorAll('.nav__link');
+const headerNavLink = document.querySelector('.header__navigation').querySelectorAll('.nav__link');
+const orderBtn = document.querySelectorAll('.order-btn');
+
+
+const scrollStep = 100;
+const minTop = 0;
+const maxTop = - scrollStep * (sectionArray.length - 1);
+let currentTop = 0;
+
+mainContent.style.top = currentTop + '%';
+
+function moveToPos(position) {
+    currentTop = position;
+    mainContent.style.top = currentTop + '%';
+    asidePaginationActive();
+}
+
+//скролл вниз
+function scrollDown() {
+    if (currentTop > maxTop) {
+        currentTop -= scrollStep;
+        mainContent.style.top = currentTop + '%';
+        asidePaginationActive();
+    }
+}
+
+//скролл вверх
+function scrollUp() {
+    if (currentTop < minTop) {
+        currentTop += scrollStep;
+        mainContent.style.top = currentTop + '%';
+        asidePaginationActive();        
+    }
+}
+
+//смена активного пункта бокового меню
+function asidePaginationActive() {
+    for (let i = 0; i < paginationLink.length; i++) {
+        paginationLink[i].classList.remove('pagination__link--active')
+    }
+    let linkNum = - currentTop / 100;
+    paginationLink[linkNum].classList.add('pagination__link--active');
+}
+
+
+//стрелка на первой странице
+forward.addEventListener('click', () => {
+    scrollDown();
+})
+
+//прокрутка с помощью клавиатуры
+document.addEventListener('keyup', e => {
+    if (e.keyCode === 40 || e.keyCode === 34) { //стрелка вниз || Page Down
+        scrollDown();
+    } else if (e.keyCode === 38 || e.keyCode === 33) {  //стрелка вверх || Page Up
+        scrollUp();
+    }
+})
+
+//прокрутка с помощью колеса
+document.addEventListener('wheel', (e) => {
+    if (e.wheelDelta > 0) {
+        scrollUp();
+    } else if (e.wheelDelta < 0) {
+        scrollDown();
+    }
+})
+
+//Навигация по боковому меню
+
+for (let i = 0; i < paginationLink.length; i++) {
+    paginationLink[i].addEventListener('click', e => {
+        e.preventDefault();
+        moveToPos(- i * 100);
+        // currentTop = - i * 100;
+        // mainContent.style.top = currentTop + '%';
+        // asidePaginationActive();        
+    })
+}
+
+
+//Header меню
+for (let i = 0; i < headerNavLink.length; i++) {
+    headerNavLink[i].addEventListener('click', e => {
+        e.preventDefault();
+        if (i != 5) {
+            moveToPos(- (i + 1) * 100);
+        } else {
+            moveToPos(- (i + 2) * 100);
+        }
+    })
+}
+
+//Гамбургер меню
+for (let i = 0; i < menuNavLink.length; i++) {
+    menuNavLink[i].addEventListener('click', e => {
+        e.preventDefault();
+        if (i != 5) {
+            moveToPos(- (i + 1) * 100);
+        } else {
+            moveToPos(- (i + 2) * 100);
+        }
+    })
+}
+
+//кнопка "Заказать"
+for (let i = 0; i < orderBtn.length; i++) {
+    orderBtn[i].addEventListener('click', e => {
+        e.preventDefault();
+        moveToPos (- 600);
+        // currentTop = - 600;
+        // mainContent.style.top = currentTop + '%';
+        // asidePaginationActive();
+    })
+}
+
+
+
+document.addEventListener('touchstart', (e) => {
+        console.log(e.touches[0]);
 })
