@@ -1,3 +1,4 @@
+
 // Полноэкранное меню
 
 const hamburgerIcon = document.querySelector('.hamburger-menu-link');
