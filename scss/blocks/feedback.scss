@@ -29,7 +29,7 @@
     transition: 0.3;
   }
   &:hover {
-    .feedback__content {
+    .feedback__container {
       opacity: 1;
     }
     &:after {
@@ -43,7 +43,7 @@
   }
 }
 
-.feedback__content {
+.feedback__container {
   position: absolute;
   top: 14%;
   left: 7%;
