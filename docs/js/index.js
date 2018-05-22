@@ -219,9 +219,9 @@ const closeDropdown = document.querySelector('.close-dropdown');
 const ingredientsPicWrap = document.querySelector('.ingredients__pic-wrap')
 let screenWidth = document.documentElement.clientWidth;
 
-if (screenWidth <= 768) {
-    dropdown.style.width = screenWidth * 0.42 + 'px';
-}
+// if (screenWidth <= 768) {
+//     dropdown.style.width = screenWidth + 'px';
+// }
 
 ingredientsPicWrap.addEventListener('click', () => {
     dropdown.style.opacity = '1';
