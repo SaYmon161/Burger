@@ -43,17 +43,17 @@ const trigger = document.querySelector('.h-accordeon__trigger')
 const triggerWidth = parseInt(getComputedStyle(trigger).width);
 const hAccoContent = document.querySelectorAll('.h-accordeon__content')
 
-function adaptHAccoContent (n, opened) {
+function adaptHAccoContent (n) {
     let screenWidth = document.documentElement.clientWidth;
     
     if (screenWidth <= 768 && screenWidth > 480) {
-        if (!opened) {
+        if (hAccoItem[i].classList.contains('h-accordeon__item--active')) {
             hAccoContent[n].style.width = screenWidth - triggerWidth * hAccoItem.length + 'px';
         } else {
             hAccoContent[n].style.width = '';
         };
     } else if (screenWidth <= 480) {
-        if (!opened) {
+        if (hAccoItem[i].classList.contains('h-accordeon__item--active')) {
             hAccoContent[n].style.width = screenWidth - triggerWidth + 'px';
         } else {
             hAccoContent[n].style.width = '';
@@ -64,7 +64,7 @@ function adaptHAccoContent (n, opened) {
 hAcco.addEventListener('click', function(e){
     for (let i = 0; i < hAccoItem.length; i++) {
         hAccoItem[i].classList.remove('h-accordeon__item--active');
-        adaptHAccoContent(i, true);
+        adaptHAccoContent(i);
     }
 });
 
@@ -75,15 +75,15 @@ for (let i = 0; i < hAccoItem.length; i++) {
 
         if (hAccoItem[i].classList.contains('h-accordeon__item--active')) {
             hAccoItem[i].classList.remove('h-accordeon__item--active');
-            adaptHAccoContent(i, true);
+            adaptHAccoContent(i);
         }
         else {
             for (let i = 0; i < hAccoItem.length; i++) {
                 hAccoItem[i].classList.remove('h-accordeon__item--active');
-                adaptHAccoContent(i, true);
+                adaptHAccoContent(i);
             }
             hAccoItem[i].classList.add('h-accordeon__item--active');
-            adaptHAccoContent(i, false);
+            adaptHAccoContent(i);
         }
     })
 }
@@ -219,21 +219,22 @@ const closeDropdown = document.querySelector('.close-dropdown');
 const ingredientsPicWrap = document.querySelector('.ingredients__pic-wrap')
 let screenWidth = document.documentElement.clientWidth;
 
-//  if (screenWidth <= 768) {
-//      dropdown.style.width = screenWidth * 0.6 + 'px';
-//  }
+if (screenWidth <= 768) {
+    // dropdown.style.width = screenWidth * 0.6 + 'px';
 
-ingredientsPicWrap.addEventListener('click', () => {
-    dropdown.style.opacity = '1';
-    dropdown.style.zIndex = '10';
-    ingredientsPicWrap.style.backgroundColor = '#e35028';
-})
+    ingredientsPicWrap.addEventListener('click', () => {
+        dropdown.style.opacity = '1';
+        dropdown.style.zIndex = '10';
+        ingredientsPicWrap.style.backgroundColor = '#e35028';
+    })
+    
+    closeDropdown.addEventListener('click', () => {
+        dropdown.style.opacity = '';
+        dropdown.style.zIndex = '';
+        ingredientsPicWrap.style.backgroundColor = '';
+    })
+}
 
-closeDropdown.addEventListener('click', () => {
-    dropdown.style.opacity = '';
-    dropdown.style.zIndex = '';
-    ingredientsPicWrap.style.backgroundColor = '';
-})
 
 
 //One Page Scroll
