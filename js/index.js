@@ -219,7 +219,7 @@ const closeDropdown = document.querySelector('.close-dropdown');
 const ingredientsPicWrap = document.querySelector('.ingredients__pic-wrap')
 let screenWidth = document.documentElement.clientWidth;
 
-if (screenWidth <= 768) {
+if (screenWidth <= 768) { // отключение ховера на мобилках
     // dropdown.style.width = screenWidth * 0.6 + 'px';
 
     ingredientsPicWrap.addEventListener('click', () => {
