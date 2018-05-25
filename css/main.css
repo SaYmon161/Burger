@@ -89,9 +89,9 @@ table {
   min-height: 650px;
   top: 0;
   will-change: top;
-  -webkit-transition: .3s top;
-  -o-transition: .3s top;
-  transition: .3s top; }
+  -webkit-transition: .1s;
+  -o-transition: .1s;
+  transition: .1s; }
 
 .container {
   margin: 0 auto;
@@ -1055,7 +1055,6 @@ table {
   font-weight: 300; }
 
 .map {
-  background: url(../img/map_section/map-bg.jpg) center center/cover no-repeat;
   position: relative; }
 
 .footer {
@@ -1192,7 +1191,7 @@ table {
     border-radius: 4px;
     background-color: #fff; }
 
-.pagination__link--active:after {
+.pagination__item--active .pagination__link:after {
   content: '';
   display: block;
   position: absolute;

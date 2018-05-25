@@ -13,7 +13,7 @@
 <body>
   <div class="wrapper">
     <div class="main-content">
-      <section class="section hello-block" id="hello-block">
+      <section class="section hello-block active" id="hello-block">
         <div class="container hello-block__inner-container">
           <header class="header">
             <div class="logo">
@@ -24,25 +24,25 @@
             <nav class="header__navigation">
               <ul class="nav__list">
                 <li class="nav__item">
-                  <a href="#best" class="nav__link">о нас</a>
+                  <a href="#best" class="nav__link" data-scroll-to="1">о нас</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#burgers" class="nav__link">бургеры</a>
+                  <a href="#burgers" class="nav__link" data-scroll-to="2">бургеры</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#team" class="nav__link">команда</a>
+                  <a href="#team" class="nav__link" data-scroll-to="3">команда</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#menu" class="nav__link">меню</a>
+                  <a href="#menu" class="nav__link" data-scroll-to="4">меню</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#feedback" class="nav__link">отзывы</a>
+                  <a href="#feedback" class="nav__link" data-scroll-to="5">отзывы</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#map" class="nav__link">контакты</a>
+                  <a href="#map" class="nav__link" data-scroll-to="7">контакты</a>
                 </li>
               </ul>
-              <a href="#order" class="order-btn">заказать</a>
+              <a href="#order" class="order-btn" data-scroll-to="6">заказать</a>
               <a class="hamburger-menu-link" id="hamburger-menu-link" href="#">
                 <div class="hamburger-menu-link__bars"></div>
               </a>
@@ -63,7 +63,7 @@
               </div>
             </div>
           </div>
-          <a class="forward-arrow">
+          <a class="forward-arrow" data-scroll-to="1">
             <!-- <img src="./img/hello_section/arrow-scroll.svg" alt="" class="forward-arrow__pic"> -->
             <svg class="forward-arrow__pic" width="29" height="14">
               <use xlink:href="img/icons/mysprite.svg#arrow-scroll"></use>
@@ -253,7 +253,7 @@
                         <span class="price__number">500</span>
                         рублей
                       </div>
-                      <a href="#" class="order-btn">заказать</a>
+                      <a href="#" class="order-btn" data-scroll-to="6">заказать</a>
                     </div>
                   </div>
                 </li>
@@ -371,7 +371,7 @@
                         <span class="price__number">500</span>
                         рублей
                       </div>
-                      <a href="#" class="order-btn">заказать</a>
+                      <a href="#" class="order-btn" data-scroll-to="6">заказать</a>
                     </div>
                   </div>
                 </li>
@@ -489,7 +489,7 @@
                         <span class="price__number">500</span>
                         рублей
                       </div>
-                      <a href="#" class="order-btn">заказать</a>
+                      <a href="#" class="order-btn" data-scroll-to="6">заказать</a>
                     </div>
                   </div>
                 </li>
@@ -607,7 +607,7 @@
                         <span class="price__number">500</span>
                         рублей
                       </div>
-                      <a href="#" class="order-btn">заказать</a>
+                      <a href="#" class="order-btn" data-scroll-to="6">заказать</a>
                     </div>
                   </div>
                 </li>
@@ -725,7 +725,7 @@
                         <span class="price__number">500</span>
                         рублей
                       </div>
-                      <a href="#" class="order-btn">заказать</a>
+                      <a href="#" class="order-btn" data-scroll-to="6">заказать</a>
                     </div>
                   </div>
                 </li>
@@ -1044,6 +1044,7 @@
         </div>
       </section>
       <section class="section map" id="map">
+        <div id="YMapsID" style="width: 100%; height: 100%;"></div>
         <footer class="footer">
           <div class="container">
             <div class="footer__content">
@@ -1102,29 +1103,29 @@
   </div>
   <aside class="pagination">
     <ul class="pagination__list">
-      <li class="pagination__item">
-        <a href="#hello-block" class="pagination__link pagination__link--active"></a>
+      <li class="pagination__item pagination__item--active">
+        <a href="#hello-block" class="pagination__link" data-scroll-to="0"></a>
       </li>
       <li class="pagination__item">
-        <a href="#best" class="pagination__link"></a>
+        <a href="#best" class="pagination__link" data-scroll-to="1"></a>
       </li>
       <li class="pagination__item">
-        <a href="#burgers" class="pagination__link"></a>
+        <a href="#burgers" class="pagination__link" data-scroll-to="2"></a>
       </li>
       <li class="pagination__item">
-        <a href="#team" class="pagination__link"></a>
+        <a href="#team" class="pagination__link" data-scroll-to="3"></a>
       </li>
       <li class="pagination__item">
-        <a href="#menu" class="pagination__link"></a>
+        <a href="#menu" class="pagination__link" data-scroll-to="4"></a>
       </li>
       <li class="pagination__item">
-        <a href="#feedback" class="pagination__link"></a>
+        <a href="#feedback" class="pagination__link" data-scroll-to="5"></a>
       </li>
       <li class="pagination__item">
-        <a href="#order" class="pagination__link"></a>
+        <a href="#order" class="pagination__link" data-scroll-to="6"></a>
       </li>
       <li class="pagination__item">
-        <a href="#map" class="pagination__link"></a>
+        <a href="#map" class="pagination__link" data-scroll-to="7"></a>
       </li>
     </ul>
   </aside>
@@ -1138,22 +1139,22 @@
     <nav class="nav">
       <ul class="nav__list nav__list--hamburger-menu">
         <li class="nav__item" id="nav__item">
-          <a href="#best" class="nav__link">о нас</a>
+          <a href="#best" class="nav__link" data-scroll-to="1">о нас</a>
         </li>
         <li class="nav__item" id="nav__item">
-          <a href="#burgers" class="nav__link">бургеры</a>
+          <a href="#burgers" class="nav__link" data-scroll-to="2">бургеры</a>
         </li>
         <li class="nav__item" id="nav__item">
-          <a href="#team" class="nav__link">команда</a>
+          <a href="#team" class="nav__link" data-scroll-to="3">команда</a>
         </li>
         <li class="nav__item" id="nav__item">
-          <a href="#menu" class="nav__link">меню</a>
+          <a href="#menu" class="nav__link" data-scroll-to="4">меню</a>
         </li>
         <li class="nav__item" id="nav__item">
-          <a href="#feedback" class="nav__link">отзывы</a>
+          <a href="#feedback" class="nav__link" data-scroll-to="5">отзывы</a>
         </li>
         <li class="nav__item" id="nav__item">
-          <a href="#map" class="nav__link">контакты</a>
+          <a href="#map" class="nav__link" data-scroll-to="6">контакты</a>
         </li>
       </ul>
     </nav>
@@ -1171,8 +1172,46 @@
       </div>
     </div>
   </script>
-  <link>https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js</link>
+  <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"> </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.1/mobile-detect.min.js'></script>
+  <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
   <script src="js/index.js"></script>
+  <script type="text/javascript">
+    var myMap;
+    ymaps.ready(function () {
+        myMap = new ymaps.Map("YMapsID", {
+            center: [59.93, 30.3],
+            zoom: 12
+        });
+        
+        myMap.controls.add(
+          new ymaps.control.ZoomControl()
+        );
+
+        myMap.controls.add('mapTools');
+
+        var myPlacemark1 = new ymaps.Placemark([59.93, 30.3], {}, {
+          iconImageHref: 'img/icons/in/map-marker.svg',
+          iconImageSize: [57, 45],
+        });
+        
+        var myPlacemark2 = new ymaps.Placemark([59.95, 30.32], {}, {
+          iconImageHref: 'img/icons/in/map-marker.svg',
+          iconImageSize: [57, 45],
+        });
+        
+        var myPlacemark3 = new ymaps.Placemark([59.91, 30.29], {}, {
+          iconImageHref: 'img/icons/in/map-marker.svg',
+          iconImageSize: [57, 45],
+        });
+
+        myMap.geoObjects.add(myPlacemark1);
+        myMap.geoObjects.add(myPlacemark2);
+        myMap.geoObjects.add(myPlacemark3);
+    });
+
+  </script>
 </body>
 
 </html>

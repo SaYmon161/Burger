@@ -47,13 +47,13 @@ function adaptHAccoContent (n) {
     let screenWidth = document.documentElement.clientWidth;
     
     if (screenWidth <= 768 && screenWidth > 480) {
-        if (hAccoItem[i].classList.contains('h-accordeon__item--active')) {
+        if (hAccoItem[n].classList.contains('h-accordeon__item--active')) {
             hAccoContent[n].style.width = screenWidth - triggerWidth * hAccoItem.length + 'px';
         } else {
             hAccoContent[n].style.width = '';
         };
     } else if (screenWidth <= 480) {
-        if (hAccoItem[i].classList.contains('h-accordeon__item--active')) {
+        if (hAccoItem[n].classList.contains('h-accordeon__item--active')) {
             hAccoContent[n].style.width = screenWidth - triggerWidth + 'px';
         } else {
             hAccoContent[n].style.width = '';
@@ -237,130 +237,231 @@ if (screenWidth <= 768) { // отключение ховера на мобилк
 
 
 
-//One Page Scroll
-const mainContent = document.querySelector('.main-content');
-const sectionArray = document.querySelectorAll('section');
-const forward = document.querySelector('.forward-arrow');
-const paginationLink = document.querySelectorAll('.pagination__link');
-const menuNavLink = document.querySelector('.nav__list--hamburger-menu').querySelectorAll('.nav__link');
-const headerNavLink = document.querySelector('.header__navigation').querySelectorAll('.nav__link');
-const orderBtn = document.querySelectorAll('.order-btn');
+// //One Page Scroll
+// const mainContent = document.querySelector('.main-content');
+// const sectionArray = document.querySelectorAll('section');
+// const forward = document.querySelector('.forward-arrow');
+// const paginationLink = document.querySelectorAll('.pagination__link');
+// const menuNavLink = document.querySelector('.nav__list--hamburger-menu').querySelectorAll('.nav__link');
+// const headerNavLink = document.querySelector('.header__navigation').querySelectorAll('.nav__link');
+// const orderBtn = document.querySelectorAll('.order-btn');
 
 
-const scrollStep = 100;
-const minTop = 0;
-const maxTop = - scrollStep * (sectionArray.length - 1);
-let currentTop = 0;
+// const scrollStep = 100;
+// const minTop = 0;
+// const maxTop = - scrollStep * (sectionArray.length - 1);
+// let currentTop = 0;
 
-mainContent.style.top = currentTop + '%';
+// mainContent.style.top = currentTop + '%';
 
-function moveToPos(position) {
-    currentTop = position;
-    mainContent.style.top = currentTop + '%';
-    asidePaginationActive();
+// function moveToPos(position) {
+//     currentTop = position;
+//     mainContent.style.top = currentTop + '%';
+//     asidePaginationActive();
+// }
+
+// //скролл вниз
+// function scrollDown() {
+//     if (currentTop > maxTop) {
+//         currentTop -= scrollStep;
+//         mainContent.style.top = currentTop + '%';
+//         asidePaginationActive();
+//     }
+// }
+
+// //скролл вверх
+// function scrollUp() {
+//     if (currentTop < minTop) {
+//         currentTop += scrollStep;
+//         mainContent.style.top = currentTop + '%';
+//         asidePaginationActive();        
+//     }
+// }
+
+// //смена активного пункта бокового меню
+// function asidePaginationActive() {
+//     for (let i = 0; i < paginationLink.length; i++) {
+//         paginationLink[i].classList.remove('pagination__link--active')
+//     }
+//     let linkNum = - currentTop / 100;
+//     paginationLink[linkNum].classList.add('pagination__link--active');
+// }
+
+
+// //стрелка на первой странице
+// forward.addEventListener('click', () => {
+//     scrollDown();
+// })
+
+// //прокрутка с помощью клавиатуры
+// document.addEventListener('keyup', e => {
+//     if (e.keyCode === 40 || e.keyCode === 34) { //стрелка вниз || Page Down
+//         scrollDown();
+//     } else if (e.keyCode === 38 || e.keyCode === 33) {  //стрелка вверх || Page Up
+//         scrollUp();
+//     }
+// })
+
+// //прокрутка с помощью колеса
+// document.addEventListener('wheel', (e) => {
+//     if (e.wheelDelta > 0) {
+//         scrollUp();
+//     } else if (e.wheelDelta < 0) {
+//         scrollDown();
+//     }
+// })
+
+// //Навигация по боковому меню
+
+// for (let i = 0; i < paginationLink.length; i++) {
+//     paginationLink[i].addEventListener('click', e => {
+//         e.preventDefault();
+//         moveToPos(- i * 100);
+//         // currentTop = - i * 100;
+//         // mainContent.style.top = currentTop + '%';
+//         // asidePaginationActive();        
+//     })
+// }
+
+
+// //Header меню
+// for (let i = 0; i < headerNavLink.length; i++) {
+//     headerNavLink[i].addEventListener('click', e => {
+//         e.preventDefault();
+//         if (i != 5) {
+//             moveToPos(- (i + 1) * 100);
+//         } else {
+//             moveToPos(- (i + 2) * 100);
+//         }
+//     })
+// }
+
+// //Гамбургер меню
+// for (let i = 0; i < menuNavLink.length; i++) {
+//     menuNavLink[i].addEventListener('click', e => {
+//         e.preventDefault();
+//         if (i != 5) {
+//             moveToPos(- (i + 1) * 100);
+//         } else {
+//             moveToPos(- (i + 2) * 100);
+//         }
+//     })
+// }
+
+// //кнопка "Заказать"
+// for (let i = 0; i < orderBtn.length; i++) {
+//     orderBtn[i].addEventListener('click', e => {
+//         e.preventDefault();
+//         moveToPos (- 600);
+//         // currentTop = - 600;
+//         // mainContent.style.top = currentTop + '%';
+//         // asidePaginationActive();
+//     })
+// }
+
+
+
+// document.addEventListener('touchstart', (e) => {
+//         console.log(e.touches[0]);
+// })
+
+
+const sections = $('.section');
+const mainContent = $('.main-content'); 
+let inScroll = false; //флаг
+
+const mobileDetect = new MobileDetect(window.navigator.userAgent); //определение мобильных устройств с помощью библиотеки
+const isMobile = mobileDetect.mobile();
+
+const asidePaginationActive = itemEq => {   //передвигаем активный класс фиксированного меню
+    $('.pagination__item')                  //находим все айтемы
+    .eq(itemEq)                             //выбираем по номеру
+    .addClass('pagination__item--active')   //вешаем активный класс
+    .siblings()                             //выбираем соседей
+    .removeClass('pagination__item--active')//удаляем у них активный класс
 }
 
-//скролл вниз
-function scrollDown() {
-    if (currentTop > maxTop) {
-        currentTop -= scrollStep;
-        mainContent.style.top = currentTop + '%';
-        asidePaginationActive();
-    }
+const moveToPos = sectionEq => {            //основная функция изменения положения
+    const currentTop = `${-sectionEq*100}%`;//задаем через номер секции умноженной на 100 в процентах. задана с помощью обратных кавычек (шаблонные строки)
+
+
+    if (inScroll) return;                   //если флаг поднят, прерываем выполнение
+
+    sections                                //перемещаем активный класс по сециям
+        .eq(sectionEq)                      //аналогично фиксированному меню
+        .addClass('active')
+        .siblings()
+        .removeClass('active');
+
+    mainContent.css({                       //задаем через свойство jquery css top для main-content
+        top: `${currentTop}`
+    });
+    asidePaginationActive(sectionEq);   //перемещаем активный класс фикс меню по номеру активной секции
+
+    const transitionDuration = parseInt(mainContent.css('transition-duration')) * 1000; //определяем длительность анимации у main-content, преобразуем в число, переводим в мс
+
+    setTimeout(() => {                      //для компенсации инерции вводим таймер
+        inScroll = false;                   //опускаем флаг
+    }, transitionDuration + 300)            //ставим таймер на длительность анимации плюс длительность инерции
 }
 
-//скролл вверх
-function scrollUp() {
-    if (currentTop < minTop) {
-        currentTop += scrollStep;
-        mainContent.style.top = currentTop + '%';
-        asidePaginationActive();        
+const scrollToSection = direction => {      //определяем активную секцию и ее соседей
+    const activeSection = sections.filter('.active'); //фильтрует из коллеции все с нужным классом 
+    const nextSection = activeSection.next();         //следующая за активной
+    const prevSection = activeSection.prev();         //предшествующая
+    
+    if (direction === 'up' && prevSection.length) {   //если направление скролла вверх и есть предыдущая
+        moveToPos(prevSection.index());               //листаем на следующую по ее индексу в коллекции
     }
-}
 
-//смена активного пункта бокового меню
-function asidePaginationActive() {
-    for (let i = 0; i < paginationLink.length; i++) {
-        paginationLink[i].classList.remove('pagination__link--active')
+    if (direction === 'down' && nextSection.length) { //то же самое, но вниз
+        moveToPos(nextSection.index());
     }
-    let linkNum = - currentTop / 100;
-    paginationLink[linkNum].classList.add('pagination__link--active');
-}
+};
 
+$(document).on({                                      //события  
+    wheel: e => {                                     //колесо
+        const deltaY = e.originalEvent.deltaY;
+        const direction = deltaY > 0 ? 'down' : 'up';
 
-//стрелка на первой странице
-forward.addEventListener('click', () => {
-    scrollDown();
-})
+        scrollToSection(direction);
+    },
+    keydown: e => {                                   //клавиатура
+        switch (e.keyCode) {
+            case 40:                                  //стрелка вниз
+            case 34:                                  //или Page Down. Конструкция называется fall-through
+                scrollToSection('down');
+                break;
 
-//прокрутка с помощью клавиатуры
-document.addEventListener('keyup', e => {
-    if (e.keyCode === 40 || e.keyCode === 34) { //стрелка вниз || Page Down
-        scrollDown();
-    } else if (e.keyCode === 38 || e.keyCode === 33) {  //стрелка вверх || Page Up
-        scrollUp();
-    }
-})
-
-//прокрутка с помощью колеса
-document.addEventListener('wheel', (e) => {
-    if (e.wheelDelta > 0) {
-        scrollUp();
-    } else if (e.wheelDelta < 0) {
-        scrollDown();
-    }
-})
-
-//Навигация по боковому меню
-
-for (let i = 0; i < paginationLink.length; i++) {
-    paginationLink[i].addEventListener('click', e => {
-        e.preventDefault();
-        moveToPos(- i * 100);
-        // currentTop = - i * 100;
-        // mainContent.style.top = currentTop + '%';
-        // asidePaginationActive();        
-    })
-}
-
-
-//Header меню
-for (let i = 0; i < headerNavLink.length; i++) {
-    headerNavLink[i].addEventListener('click', e => {
-        e.preventDefault();
-        if (i != 5) {
-            moveToPos(- (i + 1) * 100);
-        } else {
-            moveToPos(- (i + 2) * 100);
+            case 38:                                  //стрелка вверх
+            case 33:                                  //Page Up
+                scrollToSection('up');
+                break;
         }
-    })
-}
-
-//Гамбургер меню
-for (let i = 0; i < menuNavLink.length; i++) {
-    menuNavLink[i].addEventListener('click', e => {
-        e.preventDefault();
-        if (i != 5) {
-            moveToPos(- (i + 1) * 100);
-        } else {
-            moveToPos(- (i + 2) * 100);
-        }
-    })
-}
-
-//кнопка "Заказать"
-for (let i = 0; i < orderBtn.length; i++) {
-    orderBtn[i].addEventListener('click', e => {
-        e.preventDefault();
-        moveToPos (- 600);
-        // currentTop = - 600;
-        // mainContent.style.top = currentTop + '%';
-        // asidePaginationActive();
-    })
-}
+    },
+    touchmove: e => e.preventDefault()                //отмена действия по умолчанию для тачей
+});
 
 
 
-document.addEventListener('touchstart', (e) => {
-        console.log(e.touches[0]);
+$('[data-scroll-to]').on('click', e => {
+    e.preventDefault();
+
+    const target = $(e.currentTarget).data('scroll-to');
+
+    moveToPos(target);
+    
 })
+
+if (isMobile) {
+    $(function() {
+        $(document).swipe( {
+          //Generic swipe handler for all directions
+          swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+            const swipeDirection = direction === 'down' ? 'up' : 'down';
+            scrollToSection(swipeDirection);
+          }
+        });
+    
+    });
+}

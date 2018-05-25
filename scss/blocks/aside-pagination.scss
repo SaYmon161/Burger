@@ -27,8 +27,8 @@
     
 }
 
-.pagination__link--active {
-    &:after {
+.pagination__item--active {
+    & .pagination__link:after {
         content: '';
         display: block;
         position: absolute;
