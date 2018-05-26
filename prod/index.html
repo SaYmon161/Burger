@@ -79,7 +79,6 @@
             <ul class="best__list">
               <li class="best__item">
                 <div>
-                  <!-- <img src="img/best_section/meat.png" alt="Мясо"> -->
                   <svg width="97" height="89" fill="#e25028">
                     <use xlink:href="img/icons/mysprite.svg#meat"></use>
                   </svg>
@@ -93,7 +92,6 @@
               </li>
               <li class="best__item">
                 <div>
-                  <!-- <img src="img/best_section/hand.png" alt="Handmade"> -->
                   <svg width="97" height="89" fill="#f8b43a">
                     <use xlink:href="img/icons/mysprite.svg#hand"></use>
                   </svg>
@@ -108,7 +106,6 @@
               </li>
               <li class="best__item">
                 <div>
-                  <!-- <img src="img/best_section/natural.png" alt="Natural products"> -->
                   <svg width="97" height="89" fill="#8ac03e">
                     <use xlink:href="img/icons/mysprite.svg#natural"></use>
                   </svg>
@@ -1202,7 +1199,7 @@
     ymaps.ready(function () {
         myMap = new ymaps.Map("YMapsID", {
             center: [59.93, 30.3],
-            zoom: 12
+            zoom: 11.5
         });
         
         myMap.controls.add(
@@ -1211,24 +1208,30 @@
 
         myMap.controls.add('mapTools');
 
-        var myPlacemark1 = new ymaps.Placemark([59.93, 30.3], {}, {
+        var myPlacemark1 = new ymaps.Placemark([59.896, 30.295], {}, {
           iconImageHref: 'img/icons/map-marker.svg',
-          iconImageSize: [57, 45],
+          iconImageSize: [95, 60],
         });
         
-        var myPlacemark2 = new ymaps.Placemark([59.95, 30.32], {}, {
+        var myPlacemark2 = new ymaps.Placemark([59.962, 30.293], {}, {
           iconImageHref: 'img/icons/map-marker.svg',
-          iconImageSize: [57, 45],
+          iconImageSize: [95, 60],
         });
         
-        var myPlacemark3 = new ymaps.Placemark([59.91, 30.29], {}, {
+        var myPlacemark3 = new ymaps.Placemark([59.952481, 30.36526], {}, {
           iconImageHref: 'img/icons/map-marker.svg',
-          iconImageSize: [57, 45],
+          iconImageSize: [95, 60],
+        });
+
+        var myPlacemark4 = new ymaps.Placemark([59.893539, 30.46659], {}, {
+          iconImageHref: 'img/icons/map-marker.svg',
+          iconImageSize: [95, 60],
         });
 
         myMap.geoObjects.add(myPlacemark1);
         myMap.geoObjects.add(myPlacemark2);
         myMap.geoObjects.add(myPlacemark3);
+        myMap.geoObjects.add(myPlacemark4);
     });
 
   </script>
