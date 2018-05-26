@@ -120,23 +120,25 @@ for (let i = 0; i < vAccoItem.length; i++) {
 //Feedback overlay
 
 const feedbackItem = document.querySelectorAll('.feedback__item');
+const feedbackList = document.querySelector('.feedback__list');
 
 let template = document.createElement('div');
 
 template.innerHTML = document.querySelector('#overlayTemplate').innerHTML;
 const overlay = createOverlay(template);
 
-for (let i = 0; i < feedbackItem.length; i++) {
-    let openButton = feedbackItem[i].querySelector('.feedback__btn');
-    let feedbackContent = feedbackItem[i].querySelector('.feedback__content');
-
-    openButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        overlay.open();
-        overlay.setContent(feedbackContent);
-        document.body.style.overflow = 'hidden';
-    });
-};
+feedbackList.addEventListener('click', e => {
+    const clickTarget = e.target;
+    const feedbackContent = clickTarget.parentNode.querySelector('.feedback__content');
+    
+    
+    if (!clickTarget.classList.contains('feedback__btn')) return;
+    console.log(feedbackContent);
+    e.preventDefault();
+    overlay.open();
+    overlay.setContent(feedbackContent);
+    document.body.style.overflow = 'hidden';
+})
 
 function createOverlay(template) {
     let fragment = template;
