@@ -1,0 +1,59 @@
+.overlay {
+    display: flex;
+    background-color: rgba($color: #2f3234, $alpha: .93);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay__container {
+    width: 460px;
+    min-height: 255px;
+    display: block;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-top: 28px;
+    padding-right: 23px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.overlay__name {
+    font-family: 'gagalin';
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.overlay__text  {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.overlay__close:before, .overlay__close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 29px;
+    width: 4px;
+    display: block;
+    background-color: #ec8468;
+}
+
+.overlay__close {
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    cursor: pointer;
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
