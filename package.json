@@ -11,6 +11,7 @@
     "doc": "docs"
   },
   "dependencies": {
+    "inputmask": "^4.0.0",
     "jquery-touchswipe": "^1.6.18"
   },
   "devDependencies": {

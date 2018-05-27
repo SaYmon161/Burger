@@ -73,6 +73,12 @@ const paths =  {
       .pipe(plumber())
       .pipe(gulp.dest(paths.build + 'fonts/'));
   }
+
+  function php() {
+    return gulp.src(paths.src + '*.php')
+      .pipe(plumber())
+      .pipe(gulp.dest(paths.build));
+  }
   
   function clean() {
     return del('prod/')
@@ -82,6 +88,7 @@ const paths =  {
     gulp.watch(paths.src + 'scss/**/*.scss', styles);
     gulp.watch(paths.src + 'js/**/*.js', scripts);
     gulp.watch(paths.src + '*.html', htmls);
+    gulp.watch(paths.src + '*.php', php);
   }
   
   function serve() {
@@ -103,12 +110,12 @@ const paths =  {
   
   gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, htmls, images, fonts)
+    gulp.parallel(styles, scripts, htmls, images, php, fonts)
   ));
   
   gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, scripts, htmls, images, fonts),
+    gulp.parallel(styles, scripts, htmls, images, php, fonts),
     gulp.parallel(watch, serve)
   ));
   

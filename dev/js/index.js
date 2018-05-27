@@ -1,4 +1,4 @@
-// var screenWidth = document.documentElement.clientWidth;
+//var inputMask = require('../../node_modules/inputmask/dist/min/jguery.inputmask.bundle.min.js');
 
 // Полноэкранное меню
 
@@ -467,3 +467,61 @@ if (isMobile) {
     
     });
 }
+
+// //Маска телефона
+
+// var phoneInput = document.getElementById("#phone");
+
+// var im = new inputMask("+7 (999) 999-99-99");
+// im.mask(phoneInput);
+
+//отправка формы AJAX
+
+$('#form__elem').on('submit', e =>{
+    e.preventDefault();
+    let form = $(e.target);
+    let popup = $('.popup');
+    let popupContent = $('.popopContent'); 
+
+    ajaxForm(form)
+        .done(msg => {
+            var mes = msg.mes,
+                status = msg.status;
+            popup.css({
+                display: 'flex'
+            })
+                
+            if (status === 'OK') {
+                popupContent.html('Сообщение отправлено');
+                form.reset;
+            } else {
+                popupContent.html('Произошла ошибка!');
+                
+            }
+        })
+        .fail((jqXHR, textStatus) => {
+            popupContent.html('Произошла ошибка!');
+        });
+
+    const popupClose = $('.popup__close').on('click', e => {
+        e.preventDefault();
+        popup.css({
+            display: ''
+        });
+
+    })
+})
+
+var ajaxForm = function (form) {
+    var data = form.serialize();
+    var method = form.attr('method');
+    var url = form.attr('action');
+    
+    return $.ajax({
+        type: method,
+        url: url,
+        dataType : 'JSON',
+        data: data
+    })
+};
+
