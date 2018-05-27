@@ -32,7 +32,7 @@ const paths =  {
       .pipe(sourcemaps.init())
       .pipe(sassGlob())
       .pipe(sass({
-        includePaths: nodeNormalizeScss.includePaths
+         includePaths: nodeNormalizeScss.includePaths
       }))
       .pipe(groupMediaQueries())
       .pipe(postcss([
@@ -42,9 +42,6 @@ const paths =  {
       .pipe(rename({ suffix: ".min" }))
       .pipe(sourcemaps.write('/'))
       .pipe(gulp.dest(paths.build + 'css/'))
-      .pipe(cleanCSS())
-      .pipe(rename('main.min.css'))
-      .pipe(gulp.dest(paths.build + 'css/'));
   }
   
   function scripts() {

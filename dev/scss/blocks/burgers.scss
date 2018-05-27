@@ -110,6 +110,7 @@
     position: absolute;
     top: 10%;
     left: 0%;
+    z-index: 100;
 
     &:hover .ingredients__dropdown {
         @include desktops {
@@ -376,6 +377,10 @@
 
     @include phones {
         width: 60%;
+    }
+
+    @include phones2 {
+        width: 70%;
     }
 }
 

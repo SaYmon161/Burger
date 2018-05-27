@@ -149,7 +149,7 @@
     }
 
     @include phones {
-        width: 80px;
+        width: rem(80px);
     }
 }
 
