@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/main.min.css">
   <title>Мистер Бургер</title>
 </head>
 
@@ -22,7 +21,7 @@
               </a>
             </div>
             <nav class="header__navigation">
-              <ul class="nav__list">
+              <ul class="nav__list nav__list--header">
                 <li class="nav__item">
                   <a href="#best" class="nav__link" data-scroll-to="1">о нас</a>
                 </li>
@@ -80,7 +79,6 @@
             <ul class="best__list">
               <li class="best__item">
                 <div>
-                  <!-- <img src="img/best_section/meat.png" alt="Мясо"> -->
                   <svg width="97" height="89" fill="#e25028">
                     <use xlink:href="img/icons/mysprite.svg#meat"></use>
                   </svg>
@@ -94,7 +92,6 @@
               </li>
               <li class="best__item">
                 <div>
-                  <!-- <img src="img/best_section/hand.png" alt="Handmade"> -->
                   <svg width="97" height="89" fill="#f8b43a">
                     <use xlink:href="img/icons/mysprite.svg#hand"></use>
                   </svg>
@@ -109,7 +106,6 @@
               </li>
               <li class="best__item">
                 <div>
-                  <!-- <img src="img/best_section/natural.png" alt="Natural products"> -->
                   <svg width="97" height="89" fill="#8ac03e">
                     <use xlink:href="img/icons/mysprite.svg#natural"></use>
                   </svg>
@@ -973,6 +969,12 @@
                 <div class="feedback__text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus, ut eaque voluptatibus quas, architecto, excepturi
                   ratione consequatur eos vel aut eligendi dicta dolorum similique sint beatae deserunt! Cupiditate, doloremque!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus, ut eaque voluptatibus quas, architecto, excepturi
+                  ratione consequatur eos vel aut eligendi dicta dolorum similique sint beatae deserunt! Cupiditate, doloremque!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus, ut eaque voluptatibus quas, architecto, excepturi
+                  ratione consequatur eos vel aut eligendi dicta dolorum similique sint beatae deserunt! Cupiditate, doloremque!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus, ut eaque voluptatibus quas, architecto, excepturi
+                  ratione consequatur eos vel aut eligendi dicta dolorum similique sint beatae deserunt! Cupiditate, doloremque!
                 </div>
               </div>
               <a href="#feedback" class="feedback__btn">подробнее</a>
@@ -1191,14 +1193,13 @@
   <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"> </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.1/mobile-detect.min.js'></script>
-  <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/index.min.js"></script>
   <script type="text/javascript">
     var myMap;
     ymaps.ready(function () {
         myMap = new ymaps.Map("YMapsID", {
             center: [59.93, 30.3],
-            zoom: 12
+            zoom: 11.5
         });
         
         myMap.controls.add(
@@ -1207,24 +1208,30 @@
 
         myMap.controls.add('mapTools');
 
-        var myPlacemark1 = new ymaps.Placemark([59.93, 30.3], {}, {
-          iconImageHref: 'img/icons/in/map-marker.svg',
-          iconImageSize: [57, 45],
+        var myPlacemark1 = new ymaps.Placemark([59.896, 30.295], {}, {
+          iconImageHref: 'img/icons/map-marker.svg',
+          iconImageSize: [95, 60],
         });
         
-        var myPlacemark2 = new ymaps.Placemark([59.95, 30.32], {}, {
-          iconImageHref: 'img/icons/in/map-marker.svg',
-          iconImageSize: [57, 45],
+        var myPlacemark2 = new ymaps.Placemark([59.962, 30.293], {}, {
+          iconImageHref: 'img/icons/map-marker.svg',
+          iconImageSize: [95, 60],
         });
         
-        var myPlacemark3 = new ymaps.Placemark([59.91, 30.29], {}, {
-          iconImageHref: 'img/icons/in/map-marker.svg',
-          iconImageSize: [57, 45],
+        var myPlacemark3 = new ymaps.Placemark([59.952481, 30.36526], {}, {
+          iconImageHref: 'img/icons/map-marker.svg',
+          iconImageSize: [95, 60],
+        });
+
+        var myPlacemark4 = new ymaps.Placemark([59.893539, 30.46659], {}, {
+          iconImageHref: 'img/icons/map-marker.svg',
+          iconImageSize: [95, 60],
         });
 
         myMap.geoObjects.add(myPlacemark1);
         myMap.geoObjects.add(myPlacemark2);
         myMap.geoObjects.add(myPlacemark3);
+        myMap.geoObjects.add(myPlacemark4);
     });
 
   </script>
