@@ -13,7 +13,10 @@
 .popup__container {
     width: 197px;
     min-height: 110px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     background-color: #fff;
     border-radius: 5px;
     padding-left: 15px;

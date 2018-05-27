@@ -485,22 +485,32 @@ $('#form__elem').on('submit', e =>{
 
     ajaxForm(form)
         .done(msg => {
-            var mes = msg.mes,
-                status = msg.status;
+            var status = msg.status;
             popup.css({
                 display: 'flex'
             })
                 
             if (status === 'OK') {
-                popupContent.html('Сообщение отправлено');
-                form.reset;
+                popup.css({
+                    display: 'flex'
+                })
+                popupContent.text('Сообщение отправлено');
+                form[0].reset();
             } else {
-                popupContent.html('Произошла ошибка!');
+                popup.css({
+                    display: 'flex'
+                })
+                popupContent.text('Произошла ошибка!');
+                form[0].reset();
                 
             }
         })
         .fail((jqXHR, textStatus) => {
-            popupContent.html('Произошла ошибка!');
+            popup.css({
+                display: 'flex'
+            })
+            popupContent.text('Произошла ошибка!');
+            form[0].reset();
         });
 
     const popupClose = $('.popup__close').on('click', e => {
