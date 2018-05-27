@@ -78,9 +78,20 @@ table {
 
 .wrapper {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden; }
+
+.main-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  top: 0;
+  will-change: top;
+  -webkit-transition: .1s;
+  -o-transition: .1s;
+  transition: .1s; }
 
 .container {
   margin: 0 auto;
@@ -106,6 +117,9 @@ table {
   width: 100%;
   height: 100vh;
   min-height: 650px; }
+  @media screen and (max-width: 768px) {
+    .section {
+      min-height: 0; } }
 
 .title {
   font-size: 4.5rem;
@@ -1041,7 +1055,6 @@ table {
   font-weight: 300; }
 
 .map {
-  background: url(../img/map_section/map-bg.jpg) center center/cover no-repeat;
   position: relative; }
 
 .footer {
@@ -1177,20 +1190,21 @@ table {
     height: 8px;
     border-radius: 4px;
     background-color: #fff; }
-  .pagination__link:hover:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: 10; }
+
+.pagination__item--active .pagination__link:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 10; }
 
 .hamburger-menu {
   position: fixed;
@@ -1395,11 +1409,11 @@ table {
   position: absolute;
   top: 10%;
   left: 0%; }
-  @media screen and (min-width: 769) {
+  @media screen and (min-width: 769px) {
     .ingredients:hover .ingredients__dropdown {
       opacity: 1;
       z-index: 10; } }
-  @media screen and (min-width: 769) {
+  @media screen and (min-width: 769px) {
     .ingredients:hover .ingredients__pic-wrap {
       background: #e35028; } }
   @media screen and (max-width: 768px) {
