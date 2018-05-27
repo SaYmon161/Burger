@@ -45,8 +45,20 @@
   } 
 }
 
+@mixin phones2 {
+  @media screen and (max-width: $phones2) {
+    @content;
+  } 
+}
+
 @mixin tablets {
   @media screen and (max-width: $tablets) {
+    @content;
+  } 
+}
+
+@mixin tablets2 {
+  @media screen and (max-width: $tablets2) {
     @content;
   } 
 }

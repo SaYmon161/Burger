@@ -23,7 +23,9 @@
 	display: flex;
 	align-items: center;
 	margin-right: rem(15px);
+}
 	
+.nav__list--header {
 	@include tablets {
 		display: none;
 	}
