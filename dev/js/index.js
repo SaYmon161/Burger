@@ -481,36 +481,35 @@ $('#form__elem').on('submit', e =>{
     e.preventDefault();
     let form = $(e.target);
     let popup = $('.popup');
-    let popupContent = $('.popopContent'); 
+    let popupContent = $('.popup__content'); 
 
     ajaxForm(form)
         .done(msg => {
             var status = msg.status;
-            popup.css({
-                display: 'flex'
-            })
-                
+            
             if (status === 'OK') {
+                inScroll = true;
                 popup.css({
                     display: 'flex'
                 })
                 popupContent.text('Сообщение отправлено');
                 form[0].reset();
             } else {
+                inScroll = true;                
                 popup.css({
                     display: 'flex'
                 })
                 popupContent.text('Произошла ошибка!');
-                form[0].reset();
                 
             }
         })
         .fail((jqXHR, textStatus) => {
+            inScroll = true;
+            
             popup.css({
                 display: 'flex'
             })
             popupContent.text('Произошла ошибка!');
-            form[0].reset();
         });
 
     const popupClose = $('.popup__close').on('click', e => {
@@ -518,7 +517,7 @@ $('#form__elem').on('submit', e =>{
         popup.css({
             display: ''
         });
-
+        inScroll = false;
     })
 })
 
