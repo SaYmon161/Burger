@@ -987,41 +987,41 @@
         <div class="container order__container">
           <h2 class="title title--order">закажите доставку</h2>
           <div class="form">
-            <form action="get"  class="form_elem">
+            <form action="server.php" method="GET" class="form__elem" id="form__elem">
               <div class="form__content">
                 <div class="form__col">
                   <div class="form__row">
                     <label class="form__block">
                       <div class="form__title">Имя</div>
-                      <input id="name" type="text" class="form__input">
+                      <input required id="username" type="text" class="form__input" name="username">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Телефон</div>
-                      <input id="phone" type="text" class="form__input">
+                      <input required id="phone" type="text" class="form__input" name="phone">
                     </label>
                   </div>
                   <div class="form__row">
                     <label class="form__block">
                       <div class="form__title">Улица</div>
-                      <input id="street" type="text" class="form__input">
+                      <input required id="street" type="text" class="form__input" name="street">
                     </label>
                   </div>
                   <div class="form__row">
                     <label class="form__block">
                       <div class="form__title">Дом</div>
-                      <input id="building" type="text" class="form__input">
+                      <input pattern="^[ 0-9]+$" required id="building" type="text" class="form__input" name="building">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Корпус</div>
-                      <input id="housing" type="text" class="form__input">
+                      <input id="housing" type="text" class="form__input" name="housing">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Квартира</div>
-                      <input id="appartment" type="text" class="form__input">
+                      <input pattern="^[ 0-9]+$" required id="appartment" type="text" class="form__input" name="appartment">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Этаж</div>
-                      <input id="floor" type="text" class="form__input">
+                      <input pattern="^[ 0-9]+$" id="floor" type="text" class="form__input" name="floor">
                     </label>
                   </div>
                 </div>
@@ -1029,7 +1029,7 @@
                   <div class="form__row">
                     <label class="form__block">
                       <div class="form__title">Комментарий</div>
-                      <textarea id="comment" class="form__input form__input--textarea"></textarea>
+                      <textarea id="comment" class="form__input form__input--textarea" name="comment"></textarea>
                     </label>
                   </div>
                   <div class="form__row">
@@ -1177,7 +1177,14 @@
       </ul>
     </nav>
   </div>
-  <script type="overlay" id="overlayTemplate">
+  <div class="popup">
+    <div class="popup__container">
+      <div class="popup__content">
+      </div>
+      <a class="popup__close">закрыть</a>
+    </div>
+  </div>
+  <script type="template" id="overlayTemplate">
     <div class="overlay">
       <div class="overlay__container">
         <div class="overlay__content">
