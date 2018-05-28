@@ -26,6 +26,12 @@
     position: relative;
 }
 
+.popup__content {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
 .popup__close {
 	display: inline-block;
 	border-radius: 5px;

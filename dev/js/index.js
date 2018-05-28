@@ -1,4 +1,4 @@
-//var inputMask = require('../../node_modules/inputmask/dist/min/jguery.inputmask.bundle.min.js');
+
 
 // Полноэкранное меню
 
@@ -468,11 +468,6 @@ if (isMobile) {
     });
 }
 
-// //Маска телефона
-
-// var phoneInput = document.getElementById("#phone");
-
-// var im = new inputMask("+7 (999) 999-99-99");
 // im.mask(phoneInput);
 
 //отправка формы AJAX
@@ -534,3 +529,8 @@ var ajaxForm = function (form) {
     })
 };
 
+//Маска телефона
+
+$(document).ready(function(){
+    $('#phone').inputmask({"mask": "+7 (999) 999-99-99"}); //specifying options
+});
