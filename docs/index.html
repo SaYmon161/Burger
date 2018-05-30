@@ -56,7 +56,7 @@
                 <h2 class="title title--slogan">
                   Мы делаем
                 </h2>
-                <div class="hello-block__slogan-text">
+                <div class="slogan__text">
                   натуральные бургеры
                 </div>
               </div>
@@ -130,8 +130,8 @@
               </svg>
             </a>
           </div>
-          <div class="slider">
-            <div class="slider__container">
+          <div class="slider__container">
+            <div class="slider">
               <ul class="slider__list">
                 <li class="slider__item">
                   <div class="ingredients">
@@ -240,7 +240,7 @@
                     <img src="img/burgers_section/black-burger.png" alt="Black burger" class="slider__pic">
                   </div>
                   <div class="slider__desc">
-                    <h2 class="title title--slider">Dark BEEF Burger</h2>
+                    <h2 class="title slider__title">Dark BEEF Burger</h2>
                     <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
                       двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
                     </p>
@@ -358,7 +358,7 @@
                     <img src="img/burgers_section/burger_sandwich_PNG4124.png" alt="Black burger" class="slider__pic">
                   </div>
                   <div class="slider__desc">
-                    <h2 class="title title--slider">Sandwich</h2>
+                    <h2 class="title slider__title">Sandwich</h2>
                     <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
                       двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
                     </p>
@@ -476,7 +476,7 @@
                     <img src="img/burgers_section/Chiken burger.png" alt="Black burger" class="slider__pic">
                   </div>
                   <div class="slider__desc">
-                    <h2 class="title title--slider">Chicken Burger</h2>
+                    <h2 class="title slider__title">Chicken Burger</h2>
                     <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
                       двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
                     </p>
@@ -594,7 +594,7 @@
                     <img src="img/burgers_section/NYC-Diner-Bacon-Cheeseburger.png" alt="Black burger" class="slider__pic">
                   </div>
                   <div class="slider__desc">
-                    <h2 class="title title--slider">NYC Diner Bacon Cheeseburger</h2>
+                    <h2 class="title slider__title">NYC Diner Bacon Cheeseburger</h2>
                     <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
                       двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
                     </p>
@@ -712,7 +712,7 @@
                     <img src="img/burgers_section/Spicy_Shrimp_Burger.png" alt="Black burger" class="slider__pic">
                   </div>
                   <div class="slider__desc">
-                    <h2 class="title title--slider">Spicy Shrimp Burger</h2>
+                    <h2 class="title slider__title">Spicy Shrimp Burger</h2>
                     <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
                       двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.
                     </p>
@@ -993,7 +993,7 @@
                   <div class="form__row">
                     <label class="form__block">
                       <div class="form__title">Имя</div>
-                      <input pattern="^[A-zА-яЁё]+$" required id="username" type="text" class="form__input" name="username">
+                      <input required id="username" type="text" class="form__input" name="username">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Телефон</div>
@@ -1017,7 +1017,7 @@
                     </label>
                     <label class="form__block">
                       <div class="form__title">Квартира</div>
-                      <input id="appartment" type="text" class="form__input" name="appartment">
+                      <input pattern="^[ 0-9]+$" required id="appartment" type="text" class="form__input" name="appartment">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Этаж</div>
@@ -1154,7 +1154,7 @@
       </a>
     </div>
     <a class="close"></a>
-    <nav class="nav">
+    <nav class="nav nav--hamburger-menu">
       <ul class="nav__list nav__list--hamburger-menu">
         <li class="nav__item" id="nav__item">
           <a href="#best" class="nav__link" data-scroll-to="1">о нас</a>
@@ -1172,7 +1172,7 @@
           <a href="#feedback" class="nav__link" data-scroll-to="5">отзывы</a>
         </li>
         <li class="nav__item" id="nav__item">
-          <a href="#map" class="nav__link" data-scroll-to="7">контакты</a>
+          <a href="#map" class="nav__link" data-scroll-to="6">контакты</a>
         </li>
       </ul>
     </nav>
