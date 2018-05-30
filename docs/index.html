@@ -130,8 +130,8 @@
               </svg>
             </a>
           </div>
-          <div class="slider__container">
-            <div class="slider">
+          <div class="slider">
+            <div class="slider__container">
               <ul class="slider__list">
                 <li class="slider__item">
                   <div class="ingredients">
@@ -993,7 +993,7 @@
                   <div class="form__row">
                     <label class="form__block">
                       <div class="form__title">Имя</div>
-                      <input required id="username" type="text" class="form__input" name="username">
+                      <input pattern="^[A-zА-яЁё]+$" required id="username" type="text" class="form__input" name="username">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Телефон</div>
@@ -1017,7 +1017,7 @@
                     </label>
                     <label class="form__block">
                       <div class="form__title">Квартира</div>
-                      <input pattern="^[ 0-9]+$" required id="appartment" type="text" class="form__input" name="appartment">
+                      <input id="appartment" type="text" class="form__input" name="appartment">
                     </label>
                     <label class="form__block">
                       <div class="form__title">Этаж</div>
@@ -1172,7 +1172,7 @@
           <a href="#feedback" class="nav__link" data-scroll-to="5">отзывы</a>
         </li>
         <li class="nav__item" id="nav__item">
-          <a href="#map" class="nav__link" data-scroll-to="6">контакты</a>
+          <a href="#map" class="nav__link" data-scroll-to="7">контакты</a>
         </li>
       </ul>
     </nav>
