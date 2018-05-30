@@ -43,12 +43,21 @@
 	color: $yellow;
 	margin-bottom: rem(25px);
 
+	&:last-child {
+		margin-bottom: 0;	
+	}
+
 	@include phones {
 		font-size: rem(45px);
 		letter-spacing: rem(3px);
 		padding-left: rem(10px);
 		margin-bottom: 15px;
+		
+		&:last-child {
+			margin-bottom: 0;	
+		}
 	}
+
 }
 
 

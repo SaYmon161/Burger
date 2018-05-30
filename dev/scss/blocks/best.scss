@@ -53,6 +53,11 @@
 
 .best__item div {
     text-align: center;
+    margin-bottom: rem(17px);
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     @include phones {
         text-align: left;
@@ -66,7 +71,6 @@
 .best__item svg {
     width: rem(97px);
     height: rem(89px);
-    margin-bottom: rem(17px);
 }
 
 .best__item h3 {

@@ -53,6 +53,10 @@
 .form__row {
     display: flex;
     margin-bottom: rem(15px);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .form__title {

@@ -182,9 +182,10 @@ const left = document.querySelector('.arrow-left');
 const right = document.querySelector('.arrow-right');
 const sliderList = document.querySelector('.slider__list');
 const sliderItemsArray = document.querySelectorAll('.slider__item');
-const slider = document.querySelector('.slider');
+const sliderContainer = document.querySelector('.slider__container');
 
-slider.style.width = sliderItemsArray.length*100 + '%'; //Динамическое изменение ширины слайдера в зависимости от количества li
+
+sliderContainer.style.width = sliderItemsArray.length*100 + '%'; //Динамическое изменение ширины слайдера в зависимости от количества li
 
 const step = 100 / sliderItemsArray.length;
 const minRight = 0;
@@ -467,8 +468,6 @@ if (isMobile) {
     
     });
 }
-
-// im.mask(phoneInput);
 
 //отправка формы AJAX
 
