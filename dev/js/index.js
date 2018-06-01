@@ -533,3 +533,17 @@ var ajaxForm = function (form) {
 $(document).ready(function(){
     $('#phone').inputmask({"mask": "+7 (999) 999-99-99"}); //specifying options
 });
+
+var input = document.getElementById('username'),
+    value = input.value;
+
+input.addEventListener('input', onInput);
+
+function onInput(e){
+  var newValue = e.target.value;
+  if( newValue.match(/[^a-zA-Zа-яА-Я]/g)) {
+     input.value = value;
+     return;
+  }
+  value = newValue;
+}
