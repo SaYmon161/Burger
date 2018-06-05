@@ -1,0 +1,70 @@
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  border-radius: $width/2;
+  background-color: $color;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+@function rem($px) {
+  @return $px / 16px+0rem;
+}
+
+@mixin arrow ($bdr-width, $color, $direction) {
+  width: 0;
+  height: 0;
+  border: $bdr-width solid transparent;
+  @if $direction == 'up' {
+    border-bottom-color: $color;
+    border-top-width: 0;
+  }
+  @else if $direction == 'down' {
+    border-top-color: $color;
+    border-bottom-width: 0;
+  }
+  @else if $direction == 'left' {
+    border-right-color: $color;
+    border-left-width: 0;
+  }
+  @else if $direction == 'right' {
+    border-left-color: $color;
+    border-right-width: 0;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: $phones) {
+    @content;
+  } 
+}
+
+@mixin phones2 {
+  @media screen and (max-width: $phones2) {
+    @content;
+  } 
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  } 
+}
+
+@mixin tablets2 {
+  @media screen and (max-width: $tablets2) {
+    @content;
+  } 
+}
+
+@mixin desktops {
+  @media screen and (min-width: 769px) {
+    @content;
+  } 
+}
